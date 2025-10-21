@@ -6,9 +6,7 @@ body {
 }
 
 
-
-
-.login-container {
+.cadaster-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +15,7 @@ body {
   padding: 40px 20px;
 }
 
-.login-box {
+.cadaster-box {
   background: #ffffff;
   border-radius: 12px;
   padding: 40px;
@@ -27,24 +25,25 @@ body {
   text-align: center;
 }
 
-.login-box h1  {
+.cadaster-box h1  {
   color: #4F46E5;
   margin-bottom: 40px;
 }
 
-.login-box h3  {
+.cadaster-box h3  {
   color: #4F46E5;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
-.login-box p {
+
+.cadaster-box p {
   font-size: 15px;
-  color: #555;
+  color: #4d4b4b;
   margin-bottom: 30px;
   font-weight: 700;
 }
 
-.login-form {
+.cadaster-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -53,7 +52,6 @@ body {
 .form-group {
   text-align: left;
 }
-
 
 label {
   font-weight: 700;
@@ -92,18 +90,19 @@ button[type="submit"]:hover {
   background: #2e27b3;
 }
 
-.register-text {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #444;
-}
-
-.register-text a {
+.back-text a {
   color: #4F46E5;
   text-decoration: none;
   font-weight: 500;
 }
 
-.register-text a:hover {
+.back-text a:hover {
   color: #2e27b3;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: block;
 }

@@ -15,7 +15,7 @@ defined('CONTROL') or die('Acesso negado!');
 
 
   <header>
-    <h1>Meu Portfólio</h1>
+    <h1>Showboard</h1>
     <nav>
       <a href="index.php?rota=home">Início</a>
       <a href="index.php?rota=dashboard"> Perfil</a>

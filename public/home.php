@@ -11,12 +11,12 @@ defined('CONTROL') or die('Acesso negado!');
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles/home.css">
-  <title>Meu Portfólio</title>
+  <title>Showboard | Homepage</title>
 </head>
 <body>
 
   <header>
-    <h1>Meu Portfólio</h1>
+    <h1>Showboard</h1>
     <nav>
       <a href="index.php?rota=dashboard"> Meus Projetos</a>
       <a href="index.php?rota=logout">Sair</a>
