@@ -4,8 +4,8 @@ defined('CONTROL') or die('Acesso negado');
 include "conexao.php";
 
 if (!empty($_POST['usuario']) && !empty($_POST['senha'])){
-$nome = $_POST['usuario'];
-$curso = $_POST['senha'];
+$usuario = $_POST['usuario'];
+$senha = $_POST['senha'];
 
 $query = "INSERT INTO login (usuario, senha) VALUES ('$usuario', '$senha')";
 

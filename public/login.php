@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </div>
       <p>Entre para gerenciar seus projetos e acompanhar sua evolução.</p>
 
-      <form action="index.php?rota=login" method="POST" class="login-form">
+      <form action="index.php?rota=create" method="POST" class="login-form">
         <div class="form-group">
           <label for="usuario">E-mail</label>
           <input type="email" id="usuario" name="usuario" placeholder="Digite seu e-mail">
