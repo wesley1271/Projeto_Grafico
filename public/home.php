@@ -10,7 +10,7 @@ defined('CONTROL') or die('Acesso negado!');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/home.css">
   <title>Showboard | Homepage</title>
 </head>
@@ -32,18 +32,59 @@ defined('CONTROL') or die('Acesso negado!');
       Criar projeto
     </a>
   </section>
-<section class="benefits">
-  <h2>Por que usar a Showboard?</h2>
-  <div class="card-container">
-    <div class="card-benefit">
-      <article class="card-article">
-        <div class="card-img">
-          <img src="#" alt="" class="cardi-img">
+
+  <section id="project-about" class="container my-5">
+    <h1>Sobre nosso projeto</h1>
+
+
+    <div id="carousel-about" class="carousel carousel-dark slide" data-bs-ride="carousel">
+
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carousel-about" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carousel-about" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carousel-about" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner">
+
+
+        <div class="carousel-item active" data-bs-interval="1000">
+          <img src="img/portfolio.jpg" class="d-block w-100" alt="codigo e ferramentas">
+          <div class="carousel-caption d-none d-md-block">
+            <h2>Linguagens e ferramentas</h2>
+            <p>Utilizamos JavaScript,  PHP, HTML, Bootstrap, CSS e Design Gráfico para desenvolver projetos modernos, e visualmente atraentes.</p>
+          </div>
         </div>
-      </article>
+
+
+        <div class="carousel-item" data-bs-interval="1000">
+          <img src="img/interacao.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>interação com o usuário</h5>
+            <p>
+              A Showboard oferece interações personalizadas para que o usuário se sinta confortável utilizando a ferramenta</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/acessibilidade.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Acessibilidade
+            </h5>
+            <p>A Showboard oferece interações personalizadas para que o usuário se sinta confortável utilizando a ferramenta</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carousel-about" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carousel-about" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-  </div>
-</section>
+  </section>
+
   <section id="projetos-recentes" class="section">
     <h3>Projetos Recentes</h3>
     <div class="card">
@@ -56,6 +97,7 @@ defined('CONTROL') or die('Acesso negado!');
     </div>
   </section>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
