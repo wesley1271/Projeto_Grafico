@@ -1,17 +1,25 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  background-color: #f4f6f8;
-  color: #333;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--second-color);
+    color: var(--text-color)
+}
+
+:root {
+    --first-color: #4F46E5;
+    --second-color: #a8bee7;
+    --hover-color: #2e27b3;
+    --text-color: #1a1a1a;
 }
 
 header {
-  background-color: #4F46E5;
+  background-color: var(--first-color);
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -34,7 +42,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #00bfff;
+  color: var(--second-color);
 }
 
 .hero-main {
@@ -60,7 +68,7 @@ nav a:hover {
 }
 
 .btn-add-project {
-  background: #4F46E5;
+  background: var(--first-color);
   border: none;
   padding: 12px 24px;
   border-radius: 8px;
@@ -103,7 +111,7 @@ nav a:hover {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 6px 12px rgba(79, 70, 229, 0.4);
 }
 
 .card h3 {
@@ -120,7 +128,7 @@ nav a:hover {
 
 .card a {
   text-decoration: none;
-  color: #4F46E5;
+  color: var(--first-color);
   font-weight: 500;
   position: relative;
   display: inline-block;
@@ -136,7 +144,7 @@ nav a:hover {
   bottom: -2px;
   width: 0%;
   height: 2px;
-  background-color: #4F46E5;
+  background-color: var(--first-color);
   transition: width 0.3s ease;
 }
 
@@ -155,7 +163,7 @@ nav a:hover {
 }
 
 .card button {
-  background: #4F46E5;
+  background: var(--first-color);
   border: none;
   padding: 5px 10px;
   border-radius: 8px;
@@ -166,7 +174,7 @@ nav a:hover {
 }
 
 .card button:hover {
-  box-shadow: 0 8px 15px rgba(0, 191, 255, 0.4);
+      box-shadow: 0 6px 12px rgba(79, 70, 229, 0.4);
   background: #2e27b3;
 }
 
@@ -205,13 +213,13 @@ nav a:hover {
 .form-create input:focus,
 .form-create textarea:focus {
   outline: none;
-  border-color: #4F46E5;
+  border-color: var(--first-color);
   box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
 }
 
 .form-create button[type="submit"] {
   padding: 12px 0;
-  background: #4F46E5;
+  background: var(--first-color);
   border: none;
   padding: 12px 24px;
   border-radius: 8px;
@@ -224,7 +232,7 @@ nav a:hover {
 
 .form-create button[type="submit"]:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(0, 191, 255, 0.4);
+      box-shadow: 0 6px 12px rgba(79, 70, 229, 0.4);
   background: #2e27b3;
 }
 
@@ -240,7 +248,7 @@ nav a:hover {
 }
 
 .form-create button[type="button"]:hover {
-  background: #999;
+  background: #b3a1a1;
 }
 
 @keyframes fadeIn {

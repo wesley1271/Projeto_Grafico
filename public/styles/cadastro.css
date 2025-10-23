@@ -1,8 +1,21 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
     margin: 0;
-    font-family: 'Inter', sans-serif; 
-    background-color: #F9FAFB;
-    color: black;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--second-color);
+    color: var(--text-color)
+}
+
+:root {
+    --first-color: #4F46E5;
+    --second-color: #a8bee7;
+    --hover-color: #2e27b3;
+    --text-color: #1a1a1a;
 }
 
 
@@ -11,7 +24,6 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 80vh;
-  background: #F9FAFB;
   padding: 40px 20px;
 }
 
@@ -19,27 +31,30 @@ body {
   background: #ffffff;
   border-radius: 12px;
   padding: 40px;
-  max-width: 400px;
+  max-width: 500px;
+  max-height: 800px;
+  height: 100%;
   width: 100%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .cadaster-box h1  {
-  color: #4F46E5;
+  color: var(--first-color);
   margin-bottom: 40px;
 }
 
 .cadaster-box h3  {
-  color: #4F46E5;
+  color: var(--first-color);
   margin: 0;
 }
 
 
 .cadaster-box p {
   font-size: 15px;
-  color: #4d4b4b;
+  color: var(--text-color);
   margin-bottom: 30px;
+  margin-top: 30px;
   font-weight: 700;
 }
 
@@ -55,7 +70,7 @@ body {
 
 label {
   font-weight: 700;
-  color: #4F46E5;
+  color: var(--first-color);
   display: block;
   margin-bottom: 6px;
 }
@@ -71,12 +86,12 @@ input {
 
 input:focus {
   outline: none;
-  border-color: #4F46E5;
+  border-color: var(--first-color);
   box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
 }
 
 button[type="submit"] {
-  background: #4F46E5;
+  background: var(--first-color);
   border: none;
   padding: 12px;
   border-radius: 8px;
@@ -84,20 +99,22 @@ button[type="submit"] {
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background: #2e27b3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 191, 255, 0.4);
+    background: var(--hover-color);
 }
-
 .back-text a {
-  color: #4F46E5;
+  color: var(--first-color);
   text-decoration: none;
   font-weight: 500;
 }
 
 .back-text a:hover {
-  color: #2e27b3;
+  color: var(--hover-color);
 }
 
 .error-message {

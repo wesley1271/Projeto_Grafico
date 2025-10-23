@@ -14,13 +14,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if (empty($erro)) {
 
-    $usuarios = require_once __DIR__ . '/../inc/usuarios.php';
+  $usuarios = require __DIR__ . '/../inc/usuarios.php';
+
     foreach ($usuarios as $user) {
       if ($user['usuario'] == $usuario && password_verify($senha, $user['senha'])) {
 
         $_SESSION['usuario'] = $usuario;
 
         header('location: index.php?rota=home');
+        exit;
       }
     }
     $erro = "Usuário e/ou senha inválidos";

@@ -1,14 +1,36 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #F9FAFB;
-    color: black;
+    background-color: var(--second-color);
+    color: var(--text-color)
+}
+
+:root {
+    --first-color: #4F46E5;
+    --first-color-light: hsl(38, 100%, 78%);
+    --second-color: #a8bee7;
+    --hover-color: #2e27b3;
+    --text-color: #1a1a1a;
+    --first-color-light: hsl(38, 100%, 78%);
+    --first-color-alt: hsl(32, 75%, 50%);
+    --second-color-light: hsl(195, 75%, 52%);
+    --dark-color: hsl(212, 40%, 12%);
+    --white-color: hsl(212, 4%, 95%);
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --p-font-size: 1rem;
 }
 
 
-
 header {
-    background: #4F46E5;
+    background: var(--first-color);
     color: white;
     padding: 20px 40px;
     display: flex;
@@ -30,8 +52,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #dfdfdfc4;
-    ;
+    color: var(--second-color);
 }
 
 
@@ -63,7 +84,7 @@ nav a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(62, 58, 109, 0.288);
+    background: rgba(78, 70, 229, 0.171);
     z-index: 0;
 }
 
@@ -79,7 +100,7 @@ nav a:hover {
 }
 
 .hero-btn {
-    background: #4F46E5;
+    background: var(--first-color);
     border: none;
     padding: 12px 24px;
     border-radius: 8px;
@@ -87,34 +108,198 @@ nav a:hover {
     color: white;
     cursor: pointer;
     transition: all 0.3s ease;
-     text-decoration: none;
+    text-decoration: none;
 }
 
 
 .hero-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 191, 255, 0.4);
-    background: #2e27b3;
+    box-shadow: 0 6px 12px rgba(79, 70, 229, 0.4);
+    background: var(--hover-color);
 }
 
+/* --------------------  ID Bootstrap  ------------------ */
 
+#project-about {
+    text-align: center;
+    padding: 4rem 0;
+}
 
-.section {
-    padding: 60px 20px;
+#project-about h1 {
+    font-size: var(--h1-font-size);
+    color: var(--first-color);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    position: relative;
+}
+
+#project-about h1::after {
+    content: "";
+    display: block;
+    background: var(--first-color);
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+    margin: 0.5rem auto;
+
+}
+
+#project-about .card {
+    background-color: var(--white-color);
+    border-radius: 15px;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+#project-about .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+}
+
+#carousel-about {
+    margin: 0 auto;
     max-width: 1000px;
-    margin: auto;
+    border-radius: 15px;
+    border: var(--first-color) solid 3px;
+    box-shadow: 0 6px 12px rgba(79, 70, 229, 0.6);
+    overflow: hidden;
+
 }
 
-.section h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #4F46E5;
+.carousel-item {
+    height: 500px;
+    transition: transform 0.6s ease-in-out;
 }
 
-.card {
-    background: #dfdfdf;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    filter: brightness(0.9);
+}
+
+.carousel-caption {
+    background: rgba(79, 70, 229, 0.8);
+    padding: 20px 20px;
+}
+
+.carousel-caption h2,
+.carousel-caption h5 {
+    color: var(--white-color);
+    font-weight: 600;
+}
+
+
+.carousel-caption p {
+    color: var(--white-color);
+}
+
+.carousel-indicators button {
+    width: 40px !important;
+    height: 8px !important;
+    border-radius: 5%;
+    margin: 0 8px;
+    background-color: rgb(2, 2, 53) !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 8%;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #2e27b3 !important;
+    border-radius: 50%;
+    padding: 1.5rem;
+    background-size: 60%;
+}
+
+@media (max-width: 767.98px) {
+    .carousel-caption.d-none.d-md-block {
+        display: block !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 400px;
+    }
+    
+    .carousel-caption {
+        bottom: 1rem;
+        padding: 1rem;
+        max-width: 200px;
+    }
+    
+    .carousel-caption h2 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.9rem;
+    };
+}
+
+
+
+@media (max-width: 500px) {
+    .carousel-item {
+        height: 400px;
+    }
+    
+    .carousel-caption {
+        bottom: 1rem;
+        padding: 1rem;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        max-width: none;
+        transform: none;
+    }
+    
+    .carousel-caption h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
+    
+    .carousel-caption h2,
+    .carousel-caption h5,
+    .carousel-caption p {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+     .carousel-indicators {
+        bottom: 10px;
+    }
+
+    .carousel-indicators button {
+        width: 30px !important;
+        height: 6px !important;
+        margin: 0 4px;
+    }
+
+   
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40%;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 1rem;
+        background-color: var(--first-color) !important;
+    }
 }
