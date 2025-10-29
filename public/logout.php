@@ -1,7 +1,6 @@
-<?php 
-defined('CONTROL') or die("Acesso negado!");
-
-
+<?php
+session_start();
 session_destroy();
-
-header('location: index.php?rota=login');
+header("Location: login.php");
+exit;
+?>

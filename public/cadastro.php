@@ -1,6 +1,6 @@
 <?php
+include "conexao.php";
 
-defined('CONTROL') or die('Acesso negado');
 $nome = $senha = $email = "";
 $nomeErr = $senhaErr = $emailErr = $msgSucess = "";
 
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (strlen(trim($_POST['senha'])) < 6) {
         $senhaErr = "A senha deve ter ao menos 6 caracteres.";
     } else {
-        $senha = trim($_POST['senha']);
+        $senha = password_hash(trim($_POST['senha']), PASSWORD_DEFAULT);
     }
 
     if (empty($_POST['email'])) {
@@ -30,15 +30,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($nomeErr) && empty($senhaErr) && empty($emailErr)) {
-        $msgSucess = "Cadastro realizado com sucesso!";
-        //colocar o insert do banco de dados henry! >///<
-        $nome = $email = $senha = "";
+        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
 
-        header("Location: index.php?rota=create");
-        exit;
+        if (mysqli_query($conn, $sql)) {
+            header("Location: login.php");
+            exit;
+        } else {
+            $msgSucess = "Erro ao cadastrar: " . mysqli_error($conn);
+        }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -48,15 +49,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="styles/cadastro.css">
-
-
     <title>Cadastro - Showboard</title>
 </head>
 
 <body>
-
     <main class="cadaster-container">
         <section class="cadaster-box">
             <div class="cadaster-title">
@@ -70,41 +67,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p style="color: green"><?= $msgSucess ?></p>
             <?php endif; ?>
 
-            <form action="index.php?rota=cadastro" method="POST" class="cadaster-form">
+            <form action="cadastro.php" method="POST" class="cadaster-form">
                 <div class="form-group">
-                    <label for="usuario">Nome</label>
-                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome de usuário" value="<?= htmlspecialchars($nome)?>">
-                    <span class="error-message"><?php echo $nomeErr; ?></span>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" value="<?= htmlspecialchars($nome) ?>">
+                    <span class="error-message"><?= $nomeErr ?></span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">E-mail</label>
                     <input type="email" id="email" name="email" placeholder="Digite seu e-mail" value="<?= htmlspecialchars($email) ?>">
-                    <span class="error-message"><?php echo $emailErr; ?></span>
+                    <span class="error-message"><?= $emailErr ?></span>
                 </div>
 
                 <div class="form-group">
                     <label for="senha">Senha</label>
                     <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
-                    <span class="error-message"><?php echo $senhaErr; ?></span>
+                    <span class="error-message"><?= $senhaErr ?></span>
                 </div>
 
                 <button type="submit">Registrar</button>
 
                 <p class="back-text">
-                    Voltar ao login | <a href="index.php?rota=login">Login</a>
+                    Já tem uma conta? <a href="login.php">Login</a>
                 </p>
             </form>
-
-
-            <?php
-            if (!empty($erro)) : ?>
-                <p style="color: red"><?= $erro ?> </p>
-            <?php endif; ?>
         </section>
     </main>
-
-
 </body>
-
 </html>

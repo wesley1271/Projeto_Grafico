@@ -1,13 +1,14 @@
 <?php
-defined('CONTROL') or die('Acesso negado');
+
 
 include "conexao.php";
 
-if (!empty($_POST['usuario']) && !empty($_POST['senha'])){
+if (!empty($_POST['usuario']) && !empty($_POST['email']) && !empty($_POST['senha']) ){
 $usuario = $_POST['usuario'];
+$email = $_POST['email'];
 $senha = $_POST['senha'];
 
-$query = "INSERT INTO login (usuario, senha) VALUES ('$usuario', '$senha')";
+$query = "INSERT INTO cadastro (usuario, email, senha) VALUES ('$usuario', '$email', '$senha')";
 
 if (mysqli_query($conn, $query)){
 

@@ -1,32 +1,33 @@
 <?php
+session_start();
+include "conexao.php";
 
-defined('CONTROL') or die('Acesso negado');
+$erro = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $usuario = $_POST['usuario'] ?? null;
+    $senha = $_POST['senha'] ?? null;
 
-  $usuario = $_POST['usuario'] ?? null;
-  $senha = $_POST['senha'] ?? null;
-  $erro = null;
+    if (empty($usuario) || empty($senha)) {
+        $erro = "E-mail e senha são obrigatórios!";
+    } else {
+        $query = "SELECT * FROM usuarios WHERE email = '$usuario'";
+        $result = mysqli_query($conn, $query);
 
-  if (empty($usuario) || empty($senha)) {
-    $erro = "Usuário e senha são obrigatórios!";
-  }
+        if ($result && mysqli_num_rows($result) > 0) {
+            $user = mysqli_fetch_assoc($result);
 
-  if (empty($erro)) {
-
-  $usuarios = require __DIR__ . '/../inc/usuarios.php';
-
-    foreach ($usuarios as $user) {
-      if ($user['usuario'] == $usuario && password_verify($senha, $user['senha'])) {
-
-        $_SESSION['usuario'] = $usuario;
-
-        header('location: index.php?rota=home');
-        exit;
-      }
+            if (password_verify($senha, $user['senha'])) {
+                $_SESSION['usuario'] = $user['nome'];
+                header("Location: dashboard.php");
+                exit;
+            } else {
+                $erro = "Senha incorreta!";
+            }
+        } else {
+            $erro = "Usuário não encontrado!";
+        }
     }
-    $erro = "Usuário e/ou senha inválidos";
-  }
 }
 ?>
 
@@ -37,49 +38,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles/login.css">
-
-
   <title>Login - Showboard</title>
 </head>
 
 <body>
-
   <main class="login-container">
     <section class="login-box">
       <div class="login-title">
-        <h1>Showboard </h1>
-        <h3> Acesse sua conta! </h3>
+        <h1>Showboard</h1>
+        <h3>Acesse sua conta!</h3>
       </div>
       <p>Entre para gerenciar seus projetos e acompanhar sua evolução.</p>
 
-      <form action="index.php?rota=create" method="POST" class="login-form">
+      <form action="login.php" method="POST" class="login-form">
         <div class="form-group">
           <label for="usuario">E-mail</label>
-          <input type="email" id="usuario" name="usuario" placeholder="Digite seu e-mail">
+          <input type="email" id="usuario" name="usuario" placeholder="Digite seu e-mail" required>
         </div>
 
         <div class="form-group">
           <label for="senha">Senha</label>
-          <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
+          <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
         </div>
 
         <button type="submit">Entrar</button>
       </form>
 
       <p class="register-text">
-        Não tem uma conta? <a href="index.php?rota=cadastro">Cadastre-se</a>
+        Não tem uma conta? <a href="cadastro.php">Cadastre-se</a>
       </p>
 
-      <?php
-      if (!empty($erro)) : ?>
-        <p style="color: red"><?= $erro ?> </p>
+      <?php if (!empty($erro)) : ?>
+        <p style="color: red"><?= $erro ?></p>
       <?php endif; ?>
     </section>
   </main>
-
-
 </body>
-
 </html>
