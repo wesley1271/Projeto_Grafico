@@ -1,9 +1,14 @@
 <?php
 include "conexao.php";
-
+defined('CONTROL') or die('Acesso negado!');
 // Buscar todos os projetos no banco
 $query = "SELECT * FROM projeto ORDER BY id DESC";
 $result = mysqli_query($conn, $query);
+if (!$result) {
+    die("Erro na consulta: " . mysqli_error($conn));
+}
+
+$row = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +41,7 @@ $result = mysqli_query($conn, $query);
   </main>
 
   <!-- Listagem dos projetos -->
-  <section class="projects-grid">
+  <section id="projects" class="projects-grid">
     <?php while ($projeto = mysqli_fetch_assoc($result)) : ?>
       <div class="card">
         <h3><?= htmlspecialchars($projeto['titulo']) ?></h3>
@@ -44,12 +49,12 @@ $result = mysqli_query($conn, $query);
         <a href="<?= htmlspecialchars($projeto['link']) ?>" target="_blank">Ver Projeto</a>
 
         <div class="btns-card">
-          <form action="editar.php" method="POST" style="display:inline;">
+          <form action="index.php?rota=editar" method="POST" style="display:inline;">
             <input type="hidden" name="id" value="<?= $projeto['id'] ?>">
             <button type="submit"><i class="fa fa-edit"></i> Editar</button>
           </form>
 
-          <form action="deletar.php" method="POST" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja deletar este projeto?');">
+          <form action="index.php?rota=deletar"  method="POST" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja deletar este projeto?');">
             <input type="hidden" name="id" value="<?= $projeto['id'] ?>">
             <button type="submit"><i class="fa fa-trash"></i> Deletar</button>
           </form>
@@ -60,7 +65,7 @@ $result = mysqli_query($conn, $query);
 
   <!-- Modal para adicionar projeto -->
   <div class="overlay" id="overlay" role="dialog" aria-modal="true">
-    <form action="created.php" method="POST" class="form-create">
+    <form action="index.php?rota=projeto" id="form-create" method="POST" class="form-create">
       <label for="titulo">Título do Projeto</label>
       <input type="text" id="titulo" name="titulo" placeholder="Ex: Site Portfólio Pessoal" required>
 

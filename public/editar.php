@@ -1,4 +1,5 @@
 <?php
+defined('CONTROL') or die('Acesso negado!');
 include "conexao.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
@@ -18,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
 </head>
 <body>
   <h2>Editar Projeto</h2>
-  <form action="editar.php" method="POST">
+  <form action="index.php?rota=editar" method="POST">
     <input type="hidden" name="id" value="<?= $projeto['id'] ?>">
 
     <label>Título:</label>
@@ -33,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     <button type="submit" name="salvar">Salvar Alterações</button>
   </form>
 
-  <a href="dashboard.php">Voltar</a>
+  <a href="index.php?rota=dashboard">Voltar</a>
 
   <?php
   if (isset($_POST['salvar'])) {
@@ -43,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
 
       $update = "UPDATE projeto SET titulo='$titulo', descricao='$descricao', link='$link' WHERE id=$id";
       if (mysqli_query($conn, $update)) {
-          header("Location: dashboard.php");
+          header("index.php?rota=dashboard");
           exit;
       } else {
           echo "Erro ao atualizar: " . mysqli_error($conn);

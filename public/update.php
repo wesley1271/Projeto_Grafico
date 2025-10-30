@@ -1,5 +1,6 @@
 <?php 
 
+defined('CONTROL') or die('Acesso negado!');
 include "conexao.php";
 
 $titulo = $_POST['titulo'];

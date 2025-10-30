@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include "conexao.php";
 
 $erro = "";
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($usuario) || empty($senha)) {
         $erro = "E-mail e senha são obrigatórios!";
     } else {
-        $query = "SELECT * FROM usuarios WHERE email = '$usuario'";
+        $query = "SELECT * FROM usuario WHERE email = '$usuario'";
         $result = mysqli_query($conn, $query);
 
         if ($result && mysqli_num_rows($result) > 0) {
@@ -19,13 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             if (password_verify($senha, $user['senha'])) {
                 $_SESSION['usuario'] = $user['nome'];
-                header("Location: dashboard.php");
+                header("Location: index.php?rota=home");
                 exit;
             } else {
-                $erro = "Senha incorreta!";
+                $erro = "Senha e/ou usuário incorreto!";
             }
         } else {
-            $erro = "Usuário não encontrado!";
+            $erro = "Senha e/ou usuário incorreto!";
         }
     }
 }
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </div>
       <p>Entre para gerenciar seus projetos e acompanhar sua evolução.</p>
 
-      <form action="login.php" method="POST" class="login-form">
+      <form action="index.php?rota=login" method="POST" class="login-form">
         <div class="form-group">
           <label for="usuario">E-mail</label>
           <input type="email" id="usuario" name="usuario" placeholder="Digite seu e-mail" required>
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </form>
 
       <p class="register-text">
-        Não tem uma conta? <a href="cadastro.php">Cadastre-se</a>
+        Não tem uma conta? <a href="index.php?rota=cadastro">Cadastre-se</a>
       </p>
 
       <?php if (!empty($erro)) : ?>

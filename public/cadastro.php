@@ -1,6 +1,6 @@
 <?php
 include "conexao.php";
-
+defined('CONTROL') or die('Acesso negado!');
 $nome = $senha = $email = "";
 $nomeErr = $senhaErr = $emailErr = $msgSucess = "";
 
@@ -30,13 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($nomeErr) && empty($senhaErr) && empty($emailErr)) {
-        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+        $sql = "INSERT INTO usuario (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
 
         if (mysqli_query($conn, $sql)) {
-            header("Location: login.php");
+            header("Location: index.php?rota=login");
             exit;
         } else {
-            $msgSucess = "Erro ao cadastrar: " . mysqli_error($conn);
+            $nomeErr = "Erro ao cadastrar: " . mysqli_error($conn);
         }
     }
 }
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p style="color: green"><?= $msgSucess ?></p>
             <?php endif; ?>
 
-            <form action="cadastro.php" method="POST" class="cadaster-form">
+            <form action="index.php?rota=cadastro" method="POST" class="cadaster-form">
                 <div class="form-group">
                     <label for="nome">Nome</label>
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome" value="<?= htmlspecialchars($nome) ?>">
@@ -89,10 +89,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button type="submit">Registrar</button>
 
                 <p class="back-text">
-                    Já tem uma conta? <a href="login.php">Login</a>
+                    Já tem uma conta? <a href="index.php?rota=login">Login</a>
                 </p>
             </form>
         </section>
     </main>
 </body>
+
 </html>

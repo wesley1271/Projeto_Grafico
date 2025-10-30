@@ -5,7 +5,7 @@ session_start();
 define('CONTROL', true);
 
 $usuario_logado = $_SESSION['usuario'] ?? null;
-$rota = $_GET['rota'] ?? null; 
+$rota = $_GET['rota'] ?? 'login';
 
 
 if (empty($usuario_logado) && !in_array($rota, ['login', 'cadastro', 'create'])) {
@@ -22,7 +22,9 @@ $rotas = [
     'home' => 'home.php',
     'logout' => 'logout.php',
     'dashboard' => 'dashboard.php',
-    'create' => 'create.php'
+    'projeto' => 'projeto.php',
+    'deletar' => 'deletar.php',
+    'editar' => 'editar.php'
 ];
 
 if (!key_exists($rota, $rotas)) {
