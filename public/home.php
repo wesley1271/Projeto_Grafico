@@ -85,17 +85,7 @@ defined('CONTROL') or die('Acesso negado!');
     </div>
   </section>
 
-  <section id="projetos-recentes" class="section">
-    <h3>Projetos Recentes</h3>
-    <div class="card">
-      <h4>Landing Page Criativa</h4>
-      <p>Projeto de site moderno com foco em UI/UX.</p>
-    </div>
-    <div class="card">
-      <h4>Aplicativo Web</h4>
-      <p>App responsivo para gestão de tarefas, feito em React.</p>
-    </div>
-  </section>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
