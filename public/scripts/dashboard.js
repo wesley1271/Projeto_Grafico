@@ -6,6 +6,7 @@ const titulo = document.getElementById('titulo');
 const descricao = document.getElementById('descricao');
 const link = document.getElementById('link');
 const toast = document.getElementById('toast');
+const toastDEL = document.getElementById('toastDEL')
 
 btnAdd.addEventListener('click', () => {
   overlay.style.display = 'flex';
@@ -34,6 +35,15 @@ document.addEventListener('keydown', (e) => {
 if (window.location.search.includes('success=1')) {
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 2000);
+
+  const url = new URL(window.location);
+  url.searchParams.delete('success');
+  window.history.replaceState({}, document.title, url);
+}
+
+if (window.location.search.includes('success=2')) {
+  toastDEL.classList.add('show');
+  setTimeout(() => toastDEL.classList.remove('show'), 2000);
 
   const url = new URL(window.location);
   url.searchParams.delete('success');

@@ -7,7 +7,7 @@ if (!empty($_POST['titulo']) && !empty($_POST['descricao']) && !empty($_POST['li
     $descricao = $_POST['descricao'];
     $link = $_POST['link'];
 
-    $query = "INSERT INTO projeto (titulo, descricao, link) VALUES ('$titulo', '$descricao', '$link')";
+    $query = "INSERT INTO projetos (titulo, descricao, link) VALUES ('$titulo', '$descricao', '$link')";
 
     if (mysqli_query($conn, $query)) {
         header("Location: index.php?rota=dashboard&success=1");

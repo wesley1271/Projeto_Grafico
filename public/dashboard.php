@@ -2,13 +2,12 @@
 include "conexao.php";
 defined('CONTROL') or die('Acesso negado!');
 // Buscar todos os projetos no banco
-$query = "SELECT * FROM projeto ORDER BY id DESC";
+$query = "SELECT * FROM projetos ORDER BY id DESC";
 $result = mysqli_query($conn, $query);
 if (!$result) {
-    die("Erro na consulta: " . mysqli_error($conn));
+  die("Erro na consulta: " . mysqli_error($conn));
 }
 
-$row = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
@@ -54,9 +53,10 @@ $row = mysqli_fetch_assoc($result);
             <button type="submit"><i class="fa fa-edit"></i> Editar</button>
           </form>
 
-          <form action="index.php?rota=deletar"  method="POST" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja deletar este projeto?');">
+          <form action="index.php?rota=deletar" method="POST" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja deletar este projeto?');">
             <input type="hidden" name="id" value="<?= $projeto['id'] ?>">
             <button type="submit"><i class="fa fa-trash"></i> Deletar</button>
+
           </form>
         </div>
       </div>
@@ -81,6 +81,7 @@ $row = mysqli_fetch_assoc($result);
   </div>
 
   <div class="toast" id="toast">Projeto criado com sucesso!</div>
+  <div class="toastDEL" id="toastDEL">Projeto excluido com sucesso!</div>
   <script src="scripts/dashboard.js" defer></script>
 </body>
 

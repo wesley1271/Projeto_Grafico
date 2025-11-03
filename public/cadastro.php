@@ -30,13 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($nomeErr) && empty($senhaErr) && empty($emailErr)) {
-        $sql = "INSERT INTO usuario (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
 
         if (mysqli_query($conn, $sql)) {
-            header("Location: index.php?rota=login");
+            header("Location: index.php?rota=login&success=1");
             exit;
         } else {
-            $nomeErr = "Erro ao cadastrar: " . mysqli_error($conn);
+            $emailErr = "Erro ao cadastrar: " . mysqli_error($conn);
         }
     }
 }

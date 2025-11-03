@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($usuario) || empty($senha)) {
         $erro = "E-mail e senha são obrigatórios!";
     } else {
-        $query = "SELECT * FROM usuario WHERE email = '$usuario'";
+        $query = "SELECT * FROM usuarios WHERE email = '$usuario'";
         $result = mysqli_query($conn, $query);
 
         if ($result && mysqli_num_rows($result) > 0) {
@@ -72,7 +72,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <?php if (!empty($erro)) : ?>
         <p style="color: red"><?= $erro ?></p>
       <?php endif; ?>
-    </section>
+   </section>
+     <div class="toast" id="toast">Cadastro realizado com sucesso!</div>
   </main>
+  <script src="scripts/login.js"></script>
 </body>
 </html>

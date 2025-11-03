@@ -60,7 +60,7 @@ defined('CONTROL') or die('Acesso negado!');
         <div class="carousel-item" data-bs-interval="1000">
           <img src="img/interacao.png" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>interação com o usuário</h5>
+            <h2>interação com o usuário</h2>
             <p>
               A Showboard oferece interações personalizadas para que o usuário se sinta confortável utilizando a ferramenta</p>
           </div>
@@ -68,8 +68,7 @@ defined('CONTROL') or die('Acesso negado!');
         <div class="carousel-item">
           <img src="img/acessibilidade.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Acessibilidade
-            </h5>
+            <h2>Acessibilidade</h2>
             <p>A Showboard oferece interações personalizadas para que o usuário se sinta confortável utilizando a ferramenta</p>
           </div>
         </div>
