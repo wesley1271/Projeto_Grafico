@@ -48,10 +48,8 @@ if (!$result) {
         <a href="<?= htmlspecialchars($projeto['link']) ?>" target="_blank">Ver Projeto</a>
 
         <div class="btns-card">
-          <form action="index.php?rota=editar" method="POST" style="display:inline;">
             <input type="hidden" name="id" value="<?= $projeto['id'] ?>">
-            <button type="submit"><i class="fa fa-edit"></i> Editar</button>
-          </form>
+            <button id="btn-edit" type="button"><i class="fa fa-edit"></i> Editar</button>
 
           <form action="index.php?rota=deletar" method="POST" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja deletar este projeto?');">
             <input type="hidden" name="id" value="<?= $projeto['id'] ?>">
@@ -66,6 +64,7 @@ if (!$result) {
   <!-- Modal para adicionar projeto -->
   <div class="overlay" id="overlay" role="dialog" aria-modal="true">
     <form action="index.php?rota=projeto" id="form-create" method="POST" class="form-create">
+      <h1 class="title">Criar projeto</h1>
       <label for="titulo">Título do Projeto</label>
       <input type="text" id="titulo" name="titulo" placeholder="Ex: Site Portfólio Pessoal" required>
 
@@ -77,6 +76,22 @@ if (!$result) {
 
       <button type="submit">Salvar Projeto</button>
       <button type="button" id="btnFechar">Fechar</button>
+    </form>
+  </div>
+
+  <div class="overlay" id="overlay-edit" role="dialog" aria-modal="true">
+    <form action="index.php?rota=editar" id="form-edit" method="POST" class="form-create">
+      <label for="titulo">Alterar Título do Projeto</label>
+      <input type="text" id="titulo-edit" name="titulo" placeholder="Ex: Site Portfólio Pessoal" required>
+
+      <label for="descricao">Descrição</label>
+      <textarea name="descricao" placeholder="Descreva seu projeto..." required></textarea>
+
+      <label for="link">Link do Projeto</label>
+      <input type="url" name="link" placeholder="https://meuprojeto.com" required>
+
+      <button type="submit">Salvar Projeto</button>
+      <button type="button" id="btnFechar-edit">Fechar</button>
     </form>
   </div>
 

@@ -1,8 +1,12 @@
 const btnAdd = document.getElementById('btn-add');
 const btnFechar = document.getElementById('btnFechar');
+const btnEdit = document.getElementById('btn-edit');
 const overlay = document.getElementById('overlay');
+const overlay_edit = document.getElementById('overlay-edit')
 const formCreate = document.getElementById('form-create');
+const formEdit = document.getElementById('form-edit');
 const titulo = document.getElementById('titulo');
+const titulo_edit = document.getElementById('titulo-edit');
 const descricao = document.getElementById('descricao');
 const link = document.getElementById('link');
 const toast = document.getElementById('toast');
@@ -49,3 +53,13 @@ if (window.location.search.includes('success=2')) {
   url.searchParams.delete('success');
   window.history.replaceState({}, document.title, url);
 }
+
+btnEdit.addEventListener('click', () => {
+  overlay_edit.style.display = 'flex';
+  titulo_edit.focus();
+});
+
+btnFechar.addEventListener('click', () => {
+  formEdit.reset();
+  overlay_edit.style.display = 'none';
+});
