@@ -6,13 +6,14 @@
 
 body {
   margin: 0;
+  height: 100%;
   font-family: 'Roboto', sans-serif;
   background-color: var(--second-color);
   color: var(--text-color)
 }
 
 :root {
-  --first-color:  #4F46E5;
+  --first-color: #4F46E5;
   --second-color: #a8bee7;
   --hover-color: #2e27b3;
   --text-color: #1a1a1a;
@@ -24,7 +25,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  min-height: 100vh;
   padding: 40px 20px;
 }
 
@@ -101,9 +102,9 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 191, 255, 0.4);
-    background: var(--hover-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 191, 255, 0.4);
+  background: var(--hover-color);
 }
 
 .register-text {
@@ -123,10 +124,10 @@ button[type="submit"]:hover {
 }
 
 .error-message {
-    color: red;
-    font-size: 0.9rem;
-    margin-top: 5px;
-    display: block;
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  display: block;
 }
 
 .toast {
@@ -148,3 +149,50 @@ button[type="submit"]:hover {
   pointer-events: auto;
   transform: translateY(-10px);
 }
+
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .login-box {
+    max-width: 90%;
+    box-shadow: none;
+  }
+
+  .login-box h1 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .login-box p {
+    font-size: 0.9rem;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button[type="submit"] {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+@media (min-height: 700px) and (max-height: 1000px) {
+  .login-container {
+    min-height: 80vh;
+  }
+}
+
+@media (min-height: 1024px) and (max-height: 1200px) {
+  .login-container {
+    min-height: 70vh;
+  }
+}
+
+@media (min-height: 1180px) {
+  .login-container {
+    min-height: 50vh;
+  }
+}
+

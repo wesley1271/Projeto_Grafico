@@ -307,15 +307,7 @@ nav a:hover {
 }
 
 
-@media(max-width:768px) {
-  .hero-main h1 {
-    font-size: 2rem;
-  }
 
-  .hero-main p {
-    font-size: 1rem;
-  }
-}
 
 
 
@@ -346,4 +338,14 @@ nav a:hover {
 
 .delete {
   color: red;
+}
+
+@media(max-width:768px) {
+  .hero-main h1 {
+    font-size: 2rem;
+  }
+
+  .hero-main p {
+    font-size: 1rem;
+  }
 }

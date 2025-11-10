@@ -2,10 +2,14 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+
 }
 
-body {
-    margin: 0;
+body,
+html {
+    height: auto !important;
+    min-height: 100vh;
+    overflow-y: auto !important;
     font-family: 'Roboto', sans-serif;
     background-color: var(--second-color);
     color: var(--text-color)
@@ -57,7 +61,7 @@ nav a:hover {
 
 
 .hero {
-    height: 90vh;
+    min-height: 90dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -223,6 +227,120 @@ nav a:hover {
     background-size: 60%;
 }
 
+
+
+/* Estilização hamburg */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.884);
+    border-width: 2px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+.navbar-toggler:active {
+    transform: scale(1.05);
+}
+
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.offcanvas {
+    background-color: var(--first-color);
+    opacity: 80%;
+}
+
+.offcanvas-title {
+    color: var(--white-color);
+}
+
+.offcanvas a {
+    display: block;
+    margin: 10px;
+    font-weight: 600;
+    color: var(--white-color);
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+div.hamburg {
+    display: none;
+}
+
+
+/* ------------------ Responsividade ---------------- */
+
+@media (max-width: 500px) {
+    div.hamburg {
+        display: flex;
+    }
+
+    a.sair,
+    a.projetos {
+        display: none;
+    }
+
+
+    /* --------------- carrossel ---------------- */
+
+
+    .carousel-caption {
+        bottom: 1rem;
+        padding: 1rem;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        max-width: none;
+        transform: none;
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
+
+    .carousel-caption h2,
+    .carousel-caption h5,
+    .carousel-caption p {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    }
+
+    .carousel-indicators {
+        bottom: -5px;
+    }
+
+    .carousel-indicators button {
+        width: 30px !important;
+        height: 6px !important;
+    }
+
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40%;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        display: none;
+    }
+
+}
+
 @media (max-width: 767.98px) {
     .carousel-caption.d-none.d-md-block {
         display: block !important;
@@ -233,73 +351,28 @@ nav a:hover {
     .carousel-item {
         height: 400px;
     }
-    
+
     .carousel-caption {
         bottom: 1rem;
         padding: 1rem;
         max-width: 200px;
     }
-    
+
     .carousel-caption h2 {
         font-size: 1.5rem;
     }
-    
+
     .carousel-caption p {
         font-size: 0.9rem;
-    };
+    }
+
+    ;
+
 }
 
-
-
-@media (max-width: 500px) {
-    .carousel-item {
-        height: 400px;
-    }
-    
-    .carousel-caption {
-        bottom: 1rem;
-        padding: 1rem;
-        left: 5%;
-        right: 5%;
-        width: 90%;
-        max-width: none;
-        transform: none;
-    }
-    
-    .carousel-caption h2 {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .carousel-caption p {
-        font-size: 0.8rem;
-        margin-bottom: 0;
-    }
-    
-    .carousel-caption h2,
-    .carousel-caption h5,
-    .carousel-caption p {
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-    }
-     .carousel-indicators {
-        bottom: 10px;
-    }
-
-    .carousel-indicators button {
-        width: 30px !important;
-        height: 6px !important;
-        margin: 0 4px;
-    }
-
-   
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 40%;
-    }
-
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        padding: 1rem;
-        background-color: var(--first-color) !important;
+@media (min-height: 700px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }

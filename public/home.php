@@ -19,9 +19,26 @@ defined('CONTROL') or die('Acesso negado!');
 
   <header>
     <h1>Showboard</h1>
-    <nav>
-      <a href="index.php?rota=dashboard"> Meus Projetos</a>
-      <a href="index.php?rota=logout">Sair</a>
+    <nav class="navbar">
+      <div class="hamburg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Barra de navegação</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <a href="index.php?rota=dashboard"> Meus Projetos</a>
+            <a href="index.php?rota=logout">Sair</a>
+          </div>
+        </div>
+      </div>
+      <a class="projetos" href="index.php?rota=dashboard"> Meus Projetos</a>
+      <a class="sair" href="index.php?rota=logout">Sair</a>
     </nav>
   </header>
 
@@ -52,7 +69,7 @@ defined('CONTROL') or die('Acesso negado!');
           <img src="img/portfolio.jpg" class="d-block w-100" alt="codigo e ferramentas">
           <div class="carousel-caption d-none d-md-block">
             <h2>Linguagens e ferramentas</h2>
-            <p>Utilizamos JavaScript,  PHP, HTML, Bootstrap, CSS e Design Gráfico para desenvolver projetos modernos, e visualmente atraentes.</p>
+            <p>Utilizamos JavaScript, PHP, HTML, Bootstrap, CSS e Design Gráfico para desenvolver projetos modernos, e visualmente atraentes.</p>
           </div>
         </div>
 
@@ -84,9 +101,23 @@ defined('CONTROL') or die('Acesso negado!');
     </div>
   </section>
 
-  
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  function ajustarAlturaHero() {
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    const alturaReal = window.innerHeight * 0.9; // 90% da altura real da tela
+    hero.style.minHeight = `${alturaReal}px`;
+  }
+}
+
+// Corrige ao carregar e ao redimensionar
+window.addEventListener('load', ajustarAlturaHero);
+window.addEventListener('resize', ajustarAlturaHero);
+</script>
 </body>
 
 </html>

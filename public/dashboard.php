@@ -28,7 +28,6 @@ if (!$result) {
     <nav>
       <a href="index.php?rota=home">Início</a>
       <a href="#">Perfil</a>
-      <a href="#">Projetos</a>
       <a href="index.php?rota=logout">Sair</a>
     </nav>
   </header>

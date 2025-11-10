@@ -123,3 +123,50 @@ button[type="submit"]:hover {
     margin-top: 5px;
     display: block;
 }
+
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .cadaster-box {
+    max-width: 90%;
+   padding: 30px 20px;
+    box-shadow: none;
+  }
+
+  .cadaster-box h1 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .cadaster-box p {
+    font-size: 0.9rem;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button[type="submit"] {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+@media (min-height: 700px) and (max-height: 1000px) {
+  .cadaster-container {
+    min-height: 80vh;
+  }
+}
+
+@media (min-height: 1024px) and (max-height: 1200px) {
+  .cadaster-container {
+    min-height: 70vh;
+  }
+}
+
+@media (min-height: 1180px) {
+  .cadaster-container {
+    min-height: 50vh;
+  }
+}

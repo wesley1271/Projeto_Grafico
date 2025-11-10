@@ -8,3 +8,5 @@ if (window.location.search.includes('success=1')) {
   url.searchParams.delete('success');
   window.history.replaceState({}, document.title, url);
 }
+
+ 
