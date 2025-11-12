@@ -5,14 +5,24 @@
 
 }
 
-body,
-html {
-    height: auto !important;
+
+
+body {
+    height: auto;
     min-height: 100vh;
-    overflow-y: auto !important;
     font-family: 'Roboto', sans-serif;
     background-color: var(--second-color);
     color: var(--text-color)
+}
+
+h1 {
+    font-family: 'Montserrat-ExBold';
+}
+
+h2,
+h3,
+a {
+    font-family: 'Montserrat-Bold';
 }
 
 :root {
@@ -61,7 +71,8 @@ nav a:hover {
 
 
 .hero {
-    min-height: 90dvh;
+    height: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,6 +91,9 @@ nav a:hover {
     z-index: 1;
 }
 
+.hero img {
+    opacity: 90%;
+}
 
 .hero::before {
     position: absolute;
@@ -88,9 +102,10 @@ nav a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(78, 70, 229, 0.171);
+    background: rgb(13 0 255 / 32%);
     z-index: 0;
 }
+
 
 .hero h2 {
     font-size: 40px;
@@ -113,6 +128,7 @@ nav a:hover {
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
+    font-family: 'Montserrat';
 }
 
 
@@ -125,6 +141,7 @@ nav a:hover {
 /* --------------------  ID Bootstrap  ------------------ */
 
 #project-about {
+    min-height: 100vh;
     text-align: center;
     padding: 4rem 0;
 }
@@ -279,18 +296,20 @@ div.hamburg {
 
 /* ------------------ Responsividade ---------------- */
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
     div.hamburg {
         display: flex;
     }
 
     a.sair,
-    a.projetos {
+    a.projetos,
+    a.perfil {
         display: none;
     }
 
 
     /* --------------- carrossel ---------------- */
+
 
 
     .carousel-caption {
@@ -347,15 +366,25 @@ div.hamburg {
     }
 }
 
-@media (max-width: 768px) {
-    .carousel-item {
-        height: 400px;
+
+@media (min-height: 800px) {
+
+
+    .hero {
+        justify-content: flex-start;
+    }
+
+    .hero h2,
+    .hero p,
+    .hero button {
+        margin-top: 20%;
+        gap: 10%;
     }
 
     .carousel-caption {
         bottom: 1rem;
         padding: 1rem;
-        max-width: 200px;
+    
     }
 
     .carousel-caption h2 {
@@ -366,13 +395,13 @@ div.hamburg {
         font-size: 0.9rem;
     }
 
-    ;
+
 
 }
-
-@media (min-height: 700px) {
-    body {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+ 
+@media (min-height: 1000px) {
+.hero p,
+.hero button {
+    margin-top: 5%;
+}
 }

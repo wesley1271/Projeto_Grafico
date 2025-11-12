@@ -1,6 +1,7 @@
 <?php
 include "conexao.php";
 defined('CONTROL') or die('Acesso negado!');
+
 // Buscar todos os projetos no banco
 $query = "SELECT * FROM projetos ORDER BY id DESC";
 $result = mysqli_query($conn, $query);
@@ -17,20 +18,41 @@ if (!$result) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard - Meus Projetos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <link rel="stylesheet" href="styles/dashboard.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
   <header>
     <h1>Showboard</h1>
-    <nav>
-      <a href="index.php?rota=home">Início</a>
-      <a href="#">Perfil</a>
-      <a href="index.php?rota=logout">Sair</a>
+    <nav class="navbar">
+      <div class="hamburg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Barra de navegação</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <a href="index.php?rota=home"> Início</a>
+            <a href="index.php?rota=perfil">Perfil</a>
+            <a href="index.php?rota=logout">Sair</a>
+          </div>
+        </div>
+      </div>
+      <a class="home" href="index.php?rota=home"> Início</a>
+      <a class="perfil" href="index.php?rota=perfil">Perfil</a>
+      <a class="sair" href="index.php?rota=logout">Sair</a>
     </nav>
   </header>
+
 
   <main class="hero-main">
     <h1>Crie e personalize seus melhores projetos!</h1>
@@ -47,12 +69,12 @@ if (!$result) {
         <a href="<?= htmlspecialchars($projeto['link']) ?>" target="_blank">Ver Projeto</a>
 
         <div class="btns-card">
-            <input type="hidden" name="id" value="<?= $projeto['id'] ?>">
-            <button id="btn-edit" type="button"><i class="fa fa-edit"></i> Editar</button>
+          <input type="hidden" name="id" value="<?= $projeto['id'] ?>">
+          <button id="btn-edit" type="button"><i class="fa fa-edit"></i> Editar</button>
 
           <form action="index.php?rota=deletar" method="POST" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja deletar este projeto?');">
             <input type="hidden" name="id" value="<?= $projeto['id'] ?>">
-            <button type="submit"><i class="fa fa-trash"></i> Deletar</button>
+            <button type="submit"><i class="fa-solid fa-trash"></i> Deletar</button>
 
           </form>
         </div>
@@ -66,12 +88,15 @@ if (!$result) {
       <h1 class="title">Criar projeto</h1>
       <label for="titulo">Título do Projeto</label>
       <input type="text" id="titulo" name="titulo" placeholder="Ex: Site Portfólio Pessoal" required>
+      <span id="erro-title" class="erro"></span>
 
       <label for="descricao">Descrição</label>
-      <textarea id="descricao" name="descricao" placeholder="Descreva seu projeto..." required></textarea>
+      <textarea id="descricao" name="descricao" placeholder="Descreva seu projeto..."></textarea>
+      <span id="erro-desc" class="erro"></span>
 
       <label for="link">Link do Projeto</label>
       <input type="url" id="link" name="link" placeholder="https://meuprojeto.com" required>
+      <span id="erro-link" class="erro"></span>
 
       <button type="submit">Salvar Projeto</button>
       <button type="button" id="btnFechar">Fechar</button>
@@ -96,7 +121,11 @@ if (!$result) {
 
   <div class="toast" id="toast">Projeto criado com sucesso!</div>
   <div class="toastDEL" id="toastDEL">Projeto excluido com sucesso!</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="scripts/dashboard.js" defer></script>
 </body>
+
+
 
 </html>

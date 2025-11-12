@@ -9,8 +9,8 @@ defined('CONTROL') or die('Acesso negado!');
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/fonts.css">
   <link rel="stylesheet" href="styles/home.css">
   <title>Showboard | Homepage</title>
 </head>
@@ -33,11 +33,13 @@ defined('CONTROL') or die('Acesso negado!');
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <a href="index.php?rota=dashboard"> Meus Projetos</a>
+            <a href="index.php?rota=perfil">Perfil</a>
             <a href="index.php?rota=logout">Sair</a>
           </div>
         </div>
       </div>
       <a class="projetos" href="index.php?rota=dashboard"> Meus Projetos</a>
+      <a href="index.php?rota=perfil" class="perfil"></a>
       <a class="sair" href="index.php?rota=logout">Sair</a>
     </nav>
   </header>
@@ -105,19 +107,7 @@ defined('CONTROL') or die('Acesso negado!');
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-  function ajustarAlturaHero() {
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    const alturaReal = window.innerHeight * 0.9; // 90% da altura real da tela
-    hero.style.minHeight = `${alturaReal}px`;
-  }
-}
 
-// Corrige ao carregar e ao redimensionar
-window.addEventListener('load', ajustarAlturaHero);
-window.addEventListener('resize', ajustarAlturaHero);
-</script>
 </body>
 
 </html>

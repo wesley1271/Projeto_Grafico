@@ -2,7 +2,7 @@
 defined('CONTROL') or die('Acesso negado!');
 include "conexao.php";
 
-if (!empty($_POST['titulo']) && !empty($_POST['descricao']) && !empty($_POST['link'])) {
+if (!empty($_POST['titulo']) && !empty($_POST['link'])) {
     $titulo = $_POST['titulo'];
     $descricao = $_POST['descricao'];
     $link = $_POST['link'];
