@@ -46,7 +46,7 @@ a {
 header {
     background: var(--first-color);
     color: white;
-    padding: 20px 40px;
+    padding: 10px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,7 +58,7 @@ header h1 {
 }
 
 nav a {
-    margin-left: 20px;
+  margin: 10px;
     color: white;
     text-decoration: none;
     font-weight: 500;
@@ -293,12 +293,20 @@ div.hamburg {
     display: none;
 }
 
-/* ------------------ Cabeçalho ---------------- */
+/* ------------------ Footer ---------------- */
 .footer-hero {
     background-color: var(--first-color);
     color: var(--white-color);
     padding: 30px;
     margin-top: 60px;
+}
+
+div.coluna {
+    display: flex;
+    flex-direction: column;
+    width: 1px;
+    height: 100%;
+    background-color: white;
 }
 
 .footer-container {

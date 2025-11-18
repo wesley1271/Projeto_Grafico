@@ -38,8 +38,8 @@ defined('CONTROL') or die('Acesso negado!');
           </div>
         </div>
       </div>
-      <a class="projetos" href="index.php?rota=dashboard"> Meus Projetos</a>
-      <a href="index.php?rota=perfil" class="perfil"></a>
+      <a href="index.php?rota=dashboard" class="projetos" > Meus Projetos</a>
+      <a href="index.php?rota=perfil" class="perfil">Perfil</a>
       <a class="sair" href="index.php?rota=logout">Sair</a>
     </nav>
   </header>
@@ -79,7 +79,7 @@ defined('CONTROL') or die('Acesso negado!');
         <div class="carousel-item" data-bs-interval="1000">
           <img src="img/interacao.png" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h2>interação com o usuário</h2>
+            <h2>Interação com o usuário</h2>
             <p>
               A Showboard oferece interações personalizadas para que o usuário se sinta confortável utilizando a ferramenta</p>
           </div>
@@ -88,7 +88,7 @@ defined('CONTROL') or die('Acesso negado!');
           <img src="img/acessibilidade.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h2>Acessibilidade</h2>
-            <p>A Showboard oferece interações personalizadas para que o usuário se sinta confortável utilizando a ferramenta</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus dolores vel enim exercitationem impedit. Modi quibusdam, in maxime dolores facilis impedit, voluptatibus voluptate velit porro molestias nam perferendis tenetur recusandae. lorem</p>
           </div>
         </div>
       </div>
@@ -114,6 +114,7 @@ defined('CONTROL') or die('Acesso negado!');
       </h3>
       
       </div>
+      <div class="coluna"></div>
       <div class="footer-content">
 
     
@@ -127,7 +128,10 @@ defined('CONTROL') or die('Acesso negado!');
           </div>
         </div>
 
+
+    
         <div class="member">
+       
           <span>Henry Golçalves</span>
           <div class="social">
             <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
@@ -136,7 +140,7 @@ defined('CONTROL') or die('Acesso negado!');
         </div>
 
         <div class="member">
-          <span>Israel</span>
+          <span>Israel dos Santos </span>
           <div class="social">
             <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
