@@ -2,12 +2,12 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Montserrat';
 }
 
 body {
   margin: 0;
   height: 100%;
-  font-family: 'Roboto', sans-serif;
   background-color: var(--second-color);
   color: var(--text-color)
 }
@@ -19,7 +19,20 @@ body {
   --text-color: #1a1a1a;
 }
 
+h1 {
+  font-family: 'Montserrat-ExBold';
+}
 
+h2,
+h3,
+a,
+label {
+  font-family: 'Montserrat-Bold';
+}
+
+p {
+  font-family: 'Montserrat';
+}
 
 .login-container {
   display: flex;
@@ -35,7 +48,7 @@ body {
   padding: 40px;
   max-width: 400px;
   width: 100%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.479);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.466);
   text-align: center;
 }
 
@@ -50,7 +63,7 @@ body {
 }
 
 .login-box p {
-  font-size: 15px;
+  font-size: 1.0rem;
   color: var(--text-color);
   margin-bottom: 30px;
   font-weight: 700;
@@ -109,14 +122,12 @@ button[type="submit"]:hover {
 
 .register-text {
   margin-top: 20px;
-  font-size: 14px;
   color: #444;
 }
 
 .register-text a {
   color: var(--first-color);
   text-decoration: none;
-  font-weight: 500;
 }
 
 .register-text a:hover {
@@ -164,7 +175,7 @@ button[type="submit"]:hover {
   }
 
   .login-box p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   input {
@@ -175,6 +186,13 @@ button[type="submit"]:hover {
   button[type="submit"] {
     font-size: 15px;
     padding: 10px;
+  }
+}
+
+
+@media (max-width: 380px) {
+  .login-box p {
+    font-size: 0.9rem;
   }
 }
 
@@ -195,4 +213,3 @@ button[type="submit"]:hover {
     min-height: 50vh;
   }
 }
-

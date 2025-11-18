@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/cadastro.css">
     <title>Cadastro - Showboard</title>
@@ -68,26 +68,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p style="color: green"><?= $msgSucess ?></p>
             <?php endif; ?>
 
-            <form action="index.php?rota=cadastro" method="POST" class="cadaster-form">
+            <form action="index.php?rota=cadastro" id="form-cadaster" method="POST" class="cadaster-form">
                 <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" value="<?= htmlspecialchars($nome) ?>">
-                    <span class="error-message"><?= $nomeErr ?></span>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome (Obrigatório):" value="<?= htmlspecialchars($nome) ?>">
+                    <span id="nomeErr" class="error-message"><?= $nomeErr ?></span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" value="<?= htmlspecialchars($email) ?>">
-                    <span class="error-message"><?= $emailErr ?></span>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail (Obrigatório): " value="<?= htmlspecialchars($email) ?>">
+                    <span id="emailErr" class="error-message"><?= $emailErr ?></span>
                 </div>
 
                 <div class="form-group">
                     <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
-                    <span class="error-message"><?= $senhaErr ?></span>
+                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha (Obrigatório):">
+                    <span id="senhaErr" class="error-message"><?= $senhaErr ?></span>
                 </div>
 
-                <button type="submit">Registrar</button>
+                <button id="btn" type="submit">Registrar</button>
 
                 <p class="back-text">
                     Já tem uma conta? <a href="index.php?rota=login">Login</a>
@@ -95,6 +95,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </section>
     </main>
+
+    <script src="scripts/cadastro.js"></script>
 </body>
 
 </html>

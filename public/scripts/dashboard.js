@@ -110,7 +110,7 @@ if (window.location.search.includes('success=2')) {
 
 /* Modal de edição */
 
-btnEdit.forEach((btn) => {
+btnsEdit.forEach((btn) => {
   btn.addEventListener('click', () => {
     overlay_edit.style.display = 'flex';
     titulo_edit.focus();
@@ -124,7 +124,7 @@ btnFechar_edit.addEventListener('click', () => {
 
 overlay_edit.addEventListener('click', (e) => {
   if (e.target === overlay_edit) {
-    formCreate.reset();
+    formEdit.reset();
     overlay_edit.style.display = 'none';
   }
 });

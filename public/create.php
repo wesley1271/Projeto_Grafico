@@ -1,23 +1,39 @@
 <?php
-defined('CONTROL') or die('Acesso negado!');
+class usuarios {
 
+    public $nome;
+    public $email;
+    private $senha;
+
+    public function getSenha() {
+        return $this->senha;
+    }
+
+    public function setSenha($senha) {
+        $this->senha = $senha;
+    }
+}
+
+defined('CONTROL') or die('Acesso negado!');
 include "conexao.php";
 
-if (!empty($_POST['usuario']) && !empty($_POST['email']) && !empty($_POST['senha']) ){
-$usuario = $_POST['usuario'];
-$email = $_POST['email'];
-$senha = $_POST['senha'];
+if (!empty($_POST['nome']) && !empty($_POST['email']) && !empty($_POST['senha'])) {
 
-$query = "INSERT INTO cadastro (usuario, email, senha) VALUES ('$usuario', '$email', '$senha')";
+    $usuario = new usuarios();
+    $usuario->nome = $_POST['nome'];
+    $usuario->email = $_POST['email'];
+    $usuario->setSenha(password_hash($_POST['senha'], PASSWORD_DEFAULT));
 
-if (mysqli_query($conn, $query)){
+    $nome = $usuario->nome;
+    $email = $usuario->email;
+    $senha = $usuario->getSenha();
 
-    echo "Registro inserido com sucesso";
+    $query = "INSERT INTO cadastro (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
 
-}else {
-    echo "erro ao inserir um registro" . mysqli_error($conn);
+    if (mysqli_query($conn, $query)) {
+        echo "Registro inserido com sucesso";
+    } else {
+        echo "Erro ao inserir um registro: " . mysqli_error($conn);
+    }
 }
-
-}
-
 ?>

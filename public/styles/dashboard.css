@@ -6,9 +6,6 @@
 }
 
 
-
-
-
 html,
 body {
   height: 100%;
@@ -20,15 +17,8 @@ body {
 
 :root {
   --first-color: #4F46E5;
-  --first-color-light: hsl(38, 100%, 78%);
   --second-color: #a8bee7;
   --hover-color: #2e27b3;
-  --text-color: #1a1a1a;
-  --first-color-light: hsl(38, 100%, 78%);
-  --first-color-alt: hsl(32, 75%, 50%);
-  --second-color-light: hsl(195, 75%, 52%);
-  --dark-color: hsl(212, 40%, 12%);
-  --white-color: hsl(212, 4%, 95%);
   --h1-font-size: 2rem;
   --h2-font-size: 1.5rem;
   --h3-font-size: 1.25rem;
@@ -224,7 +214,6 @@ nav a:hover {
   padding: 30px;
   border-radius: 12px;
   width: 90%;
-  height: 90dch;
   max-width: 500px;
   display: flex;
   flex-direction: column;
@@ -259,6 +248,7 @@ nav a:hover {
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-bottom: 10px;
 }
 
 .form-create button[type="submit"]:hover {
@@ -308,7 +298,6 @@ nav a:hover {
   pointer-events: none;
   transition: opacity 0.3s, transform 0.3s;
 }
-
 .toast.show,
 .toastDEL.show {
   opacity: 1;
@@ -478,9 +467,7 @@ div.hamburg {
 /* Nest Hub */
 @media (min-height: 600px) and (min-width: 1024px) {
 
-  .form-create {
-    gap: 2px;
-  }
+
 }
 
 @media (min-height: 915px) {

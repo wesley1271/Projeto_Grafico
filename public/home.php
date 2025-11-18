@@ -102,7 +102,50 @@ defined('CONTROL') or die('Acesso negado!');
       </button>
     </div>
   </section>
+  <footer class="footer-hero">
+    <div class="footer-container">
+      <div class="footer-header">
+        <h3 class="footer-title">Showboard</h3>
 
+      </div>
+      <div class="contato">
+          <h3 class="contato">
+        Nosso contato
+      </h3>
+      
+      </div>
+      <div class="footer-content">
+
+    
+        <h3>Equipe</h3>
+
+        <div class="member">
+          <span>Wesley Carvalho</span>
+          <div class="social">
+            <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="member">
+          <span>Henry Golçalves</span>
+          <div class="social">
+            <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="member">
+          <span>Israel</span>
+          <div class="social">
+            <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
 
 
 

@@ -70,8 +70,13 @@ if (!$result) {
 
         <div class="btns-card">
           <input type="hidden" name="id" value="<?= $projeto['id'] ?>">
-          <button id="btn-edit" type="button"><i class="fa fa-edit"></i> Editar</button>
-
+          <button class="btn-edit" type="button"
+            data-id="<?= $projeto['id'] ?>"
+            data-titulo="<?= htmlspecialchars($projeto['titulo']) ?>"
+            data-desc="<?= htmlspecialchars($projeto['descricao']) ?>"
+            data-link="<?= htmlspecialchars($projeto['link']) ?>">
+            <i class="fa fa-edit"></i> Editar
+          </button>
           <form action="index.php?rota=deletar" method="POST" style="display:inline;" onsubmit="return confirm('Tem certeza que deseja deletar este projeto?');">
             <input type="hidden" name="id" value="<?= $projeto['id'] ?>">
             <button type="submit"><i class="fa-solid fa-trash"></i> Deletar</button>
@@ -103,18 +108,23 @@ if (!$result) {
     </form>
   </div>
 
+
+
+  <!-- Modal para editar projeto -->
   <div class="overlay" id="overlay-edit" role="dialog" aria-modal="true">
-    <form action="index.php?rota=editar" id="form-edit" method="POST" class="form-create">
-      <label for="titulo">Alterar Título do Projeto</label>
+    <form action="index.php?rota=editar" id="form-edit" method="POST" class="form-create">      
+      <h1 class="title">Alterar Projeto</h1>
+      
+      <label for="titulo">Título do Projeto</label>
       <input type="text" id="titulo-edit" name="titulo" placeholder="Ex: Site Portfólio Pessoal" required>
 
-      <label for="descricao">Descrição</label>
-      <textarea name="descricao" placeholder="Descreva seu projeto..." required></textarea>
+      <label for="descricao-edit">Descrição</label>
+      <textarea id="descricao-edit" name="descricao" placeholder="Descreva seu projeto..." required></textarea>
 
-      <label for="link">Link do Projeto</label>
-      <input type="url" name="link" placeholder="https://meuprojeto.com" required>
+      <label for="link-edit">Link do Projeto</label>
+      <input type="url" id="link-edit" name="link" placeholder="https://meuprojeto.com" required>
 
-      <button type="submit">Salvar Projeto</button>
+      <button type="submit">Salvar Alterações</button>
       <button type="button" id="btnFechar-edit">Fechar</button>
     </form>
   </div>
