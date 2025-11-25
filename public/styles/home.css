@@ -42,11 +42,7 @@ a {
 header {
     background: var(--first-color);
     color: white;
-<<<<<<< HEAD
-    padding: 10px 40px;
-=======
     padding: 10px 100px;
->>>>>>> 5b54deb (Projeto_Portfólio)
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -68,11 +64,7 @@ header img {
 }
 
 nav a {
-<<<<<<< HEAD
-  margin: 10px;
-=======
     margin-left: 30px;
->>>>>>> 5b54deb (Projeto_Portfólio)
     color: white;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -307,9 +299,6 @@ div.hamburg {
 }
 
 /* ------------------ Footer ---------------- */
-<<<<<<< HEAD
-.footer-hero {
-=======
 
 
 footer {
@@ -317,31 +306,12 @@ footer {
 }
 
 .foo-hero {
->>>>>>> 5b54deb (Projeto_Portfólio)
     background-color: var(--first-color);
     color: white;
 }
 
-<<<<<<< HEAD
-div.coluna {
-    display: flex;
-    flex-direction: column;
-    width: 1px;
-    height: 100%;
-    background-color: white;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-=======
 .content-about {
     padding: 40px 80px;
->>>>>>> 5b54deb (Projeto_Portfólio)
 }
 
 .foo-header {
@@ -381,7 +351,7 @@ a.foo-link:hover {
 
 footer img {
   width: 28px;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 
 
