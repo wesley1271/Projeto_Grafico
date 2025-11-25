@@ -146,8 +146,9 @@ if (!$result) {
     </form>
   </div>
 
-  <div class="toast" id="toast">Projeto criado com sucesso!</div>
+  <div class="toastDEL" id="toast">Projeto criado com sucesso!</div>
   <div class="toastDEL" id="toastDEL">Projeto excluido com sucesso!</div>
+   <div class="toastDEL" id="toastEdit">Projeto editado com sucesso!</div>
 
 
   <footer class="foo-hero text-center text-lg-start">

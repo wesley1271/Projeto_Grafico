@@ -294,7 +294,7 @@ nav a:hover {
   }
 }
 
-.toast,
+
 .toastDEL {
   position: fixed;
   bottom: 20px;
@@ -510,12 +510,6 @@ footer img:hover {
     margin-bottom: 15px;
   }
 
-  .toast,
-  .toastDEL {
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 
   div.hamburg {
     display: flex;

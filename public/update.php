@@ -14,7 +14,7 @@ if ($id > 0 && $titulo && $link) {
 
     if (mysqli_query($conn, $sql_update)) {
         // Redireciona de volta para a dashboard com flag de sucesso
-        header("Location: index.php?rota=dashboard&status=editado");
+        header("Location: index.php?rota=dashboard&success=3");
         exit;
     } else {
         die("Erro ao atualizar o projeto: " . mysqli_error($conn));

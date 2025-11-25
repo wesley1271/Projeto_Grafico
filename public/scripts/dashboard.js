@@ -26,6 +26,7 @@ const id_edit = document.getElementById('id-edit');
 
 const toast = document.getElementById('toast');
 const toastDEL = document.getElementById('toastDEL');
+const toastEdit = document.getElementById('toastEdit');
 
 /* ---------------- Erros ---------------- */
 
@@ -134,6 +135,15 @@ if (window.location.search.includes('success=2')) {
 
   toastDEL.classList.add('show');
   setTimeout(() => toastDEL.classList.remove('show'), 2000);
+
+  const url = new URL(window.location);
+  url.searchParams.delete('success');
+  window.history.replaceState({}, document.title, url);
+}
+if (window.location.search.includes('success=3')) {
+
+  toastEdit.classList.add('show');
+  setTimeout(() => toastEdit.classList.remove('show'), 2000);
 
   const url = new URL(window.location);
   url.searchParams.delete('success');
