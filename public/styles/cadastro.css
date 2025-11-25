@@ -41,10 +41,19 @@ p {
 .cadaster-container {
   display: flex;
   justify-content: center;
-   align-items: flex-start;
+  align-items: flex-start;
   min-height: 100dvh;
   width: 100%;
   padding: 40px 20px;
+}
+
+
+img {
+  display: inline-block;
+  width: 90px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.466);
 }
 
 .cadaster-box {
@@ -52,6 +61,7 @@ p {
   border-radius: 12px;
   padding: 40px;
   max-width: 420px;
+  max-height: 700px;
   width: 100%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.466);
   text-align: center;
@@ -145,16 +155,23 @@ button[type="submit"]:hover {
 
 
 .sucesso {
-    color: #28a745; /* Verde para sucesso */
+  color: #28a745;
+  /* Verde para sucesso */
 }
 
 .erro {
-    color: #dc3545; /* Vermelho para erro geral */
+  color: #dc3545;
+  /* Vermelho para erro geral */
 }
 
 /* Responsividade */
 
 @media (max-width: 480px) {
+  .cadaster-container {
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+
   .cadaster-box {
     max-width: 95%;
     padding: 25px;
@@ -180,18 +197,59 @@ button[type="submit"]:hover {
   }
 }
 
-@media (min-width: 780px) and (max-width: 1024px) {
+@media (min-width: 500px) and (max-width: 1400px) {
   .cadaster-container {
-    align-items: flex-start; 
-    padding-top: 10px;     
+    align-items: flex-start;
+    padding-top: 10px;
   }
 
-    .cadaster-box {
-     max-height: 80%;
-      padding: 30px;            
+  .cadaster-box {
+    max-height: 80%;
+    padding: 30px;
     max-width: 380px;
-    }
+  }
 }
 
+/* Nest Hub – 1024x600 */
+@media (width: 1024px) and (height: 600px) {
 
+  .cadaster-container {
+    padding: 10px 10px;
+    align-items: flex-start;
+  }
 
+  .cadaster-box {
+    max-width: 340px;
+    padding: 25px;
+    max-height: 580px;
+  }
+
+  .cadaster-box h1 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .cadaster-box p {
+    font-size: 0.85rem;
+    margin: 15px 0;
+  }
+
+  .cadaster-box h3 {
+    font-size: 1.1rem;
+  }
+
+  input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  button[type="submit"] {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  img {
+    width: 70px;
+    margin-bottom: 15px;
+  }
+}

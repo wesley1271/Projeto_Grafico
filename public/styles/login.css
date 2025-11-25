@@ -42,13 +42,22 @@ p {
   padding: 40px 20px;
 }
 
+
+img {
+    display: inline-block;
+    width: 90px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.466);
+}
+
 .login-box {
   background: #ffffff;
   border-radius: 12px;
   padding: 40px;
   max-width: 400px;
   width: 100%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.466);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.466);
   text-align: center;
 }
 
@@ -166,7 +175,6 @@ button[type="submit"]:hover {
 @media (max-width: 480px) {
   .login-box {
     max-width: 90%;
-    box-shadow: none;
   }
 
   .login-box h1 {

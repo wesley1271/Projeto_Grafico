@@ -5,29 +5,30 @@ include "conexao.php";
 $erro = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $usuario = $_POST['usuario'] ?? null;
-    $senha = $_POST['senha'] ?? null;
+  $usuario = $_POST['usuario'] ?? null;
+  $senha = $_POST['senha'] ?? null;
 
-    if (empty($usuario) || empty($senha)) {
-        $erro = "E-mail e senha são obrigatórios!";
+  if (empty($usuario) || empty($senha)) {
+    $erro = "E-mail e senha são obrigatórios!";
+  } else {
+    $query = "SELECT * FROM usuarios WHERE email = '$usuario'";
+    $result = mysqli_query($conn, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+      $user = mysqli_fetch_assoc($result);
+
+      if (password_verify($senha, $user['senha'])) {
+        $_SESSION['usuario_id']   = $user['id'];  
+        $_SESSION['usuario_nome'] = $user['nome'];
+        header("Location: index.php?rota=home");
+        exit;
+      } else {
+        $erro = "Senha e/ou usuário incorreto!";
+      }
     } else {
-        $query = "SELECT * FROM usuarios WHERE email = '$usuario'";
-        $result = mysqli_query($conn, $query);
-
-        if ($result && mysqli_num_rows($result) > 0) {
-            $user = mysqli_fetch_assoc($result);
-
-            if (password_verify($senha, $user['senha'])) {
-                $_SESSION['usuario'] = $user['nome'];
-                header("Location: index.php?rota=home");
-                exit;
-            } else {
-                $erro = "Senha e/ou usuário incorreto!";
-            }
-        } else {
-            $erro = "Senha e/ou usuário incorreto!";
-        }
+      $erro = "Senha e/ou usuário incorreto!";
     }
+  }
 }
 ?>
 
@@ -46,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <main class="login-container">
     <section class="login-box">
       <div class="login-title">
-        <h1>Showboard</h1>
+        <img src="img/logo.png" alt="logo showboard">
         <h3>Acesse sua conta!</h3>
       </div>
       <p>Entre para gerenciar seus projetos e acompanhar sua evolução.</p>
@@ -72,9 +73,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <?php if (!empty($erro)) : ?>
         <p style="color: red"><?= $erro ?></p>
       <?php endif; ?>
-   </section>
-     <div class="toast" id="toast">Cadastro realizado com sucesso!</div>
+    </section>
+    <div class="toast" id="toast">Cadastro realizado com sucesso!</div>
   </main>
   <script src="scripts/login.js"></script>
 </body>
+
 </html>

@@ -2,17 +2,19 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-
+    font-family: 'Montserrat';
 }
 
-
+a {
+    text-decoration: none
+}
 
 body {
     height: auto;
-    min-height: 100vh;
+    min-height: 100dvh;
     font-family: 'Roboto', sans-serif;
     background-color: var(--second-color);
-    color: var(--text-color)
+    color: var(--first-color);
 }
 
 h1 {
@@ -21,21 +23,15 @@ h1 {
 
 h2,
 h3,
+h6,
 a {
     font-family: 'Montserrat-Bold';
 }
 
 :root {
     --first-color: #4F46E5;
-    --first-color-light: hsl(38, 100%, 78%);
     --second-color: #a8bee7;
     --hover-color: #2e27b3;
-    --text-color: #1a1a1a;
-    --first-color-light: hsl(38, 100%, 78%);
-    --first-color-alt: hsl(32, 75%, 50%);
-    --second-color-light: hsl(195, 75%, 52%);
-    --dark-color: hsl(212, 40%, 12%);
-    --white-color: hsl(212, 4%, 95%);
     --h1-font-size: 2rem;
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
@@ -46,23 +42,41 @@ a {
 header {
     background: var(--first-color);
     color: white;
+<<<<<<< HEAD
     padding: 10px 40px;
+=======
+    padding: 10px 100px;
+>>>>>>> 5b54deb (Projeto_Portfólio)
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 6;
 }
 
 header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 1.8rem;
+}
+
+header img {
+    display: inline-block;
+    width: 90px;
+    border: 2px solid white;
+    border-radius: 50px;
 }
 
 nav a {
+<<<<<<< HEAD
   margin: 10px;
+=======
+    margin-left: 30px;
+>>>>>>> 5b54deb (Projeto_Portfólio)
     color: white;
     text-decoration: none;
-    font-weight: 500;
     transition: all 0.3s ease;
+    font-size: 1.2rem;
 }
 
 nav a:hover {
@@ -89,6 +103,7 @@ nav a:hover {
 
 .hero>* {
     z-index: 1;
+
 }
 
 .hero img {
@@ -141,9 +156,7 @@ nav a:hover {
 /* --------------------  ID Bootstrap  ------------------ */
 
 #project-about {
-    min-height: 100vh;
     text-align: center;
-    padding: 4rem 0;
 }
 
 #project-about h1 {
@@ -166,7 +179,7 @@ nav a:hover {
 }
 
 #project-about .card {
-    background-color: var(--white-color);
+    background-color: white;
     border-radius: 15px;
     border: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -206,13 +219,13 @@ nav a:hover {
 
 .carousel-caption h2,
 .carousel-caption h5 {
-    color: var(--white-color);
+    color: white;
     font-weight: 600;
 }
 
 
 .carousel-caption p {
-    color: var(--white-color);
+    color: white;
 }
 
 .carousel-indicators button {
@@ -275,14 +288,14 @@ nav a:hover {
 }
 
 .offcanvas-title {
-    color: var(--white-color);
+   color: white;
 }
 
 .offcanvas a {
     display: block;
     margin: 10px;
     font-weight: 600;
-    color: var(--white-color);
+    color: white;
 }
 
 .btn-close {
@@ -294,13 +307,22 @@ div.hamburg {
 }
 
 /* ------------------ Footer ---------------- */
+<<<<<<< HEAD
 .footer-hero {
-    background-color: var(--first-color);
-    color: var(--white-color);
-    padding: 30px;
-    margin-top: 60px;
+=======
+
+
+footer {
+    margin-top: auto;
 }
 
+.foo-hero {
+>>>>>>> 5b54deb (Projeto_Portfólio)
+    background-color: var(--first-color);
+    color: white;
+}
+
+<<<<<<< HEAD
 div.coluna {
     display: flex;
     flex-direction: column;
@@ -316,19 +338,71 @@ div.coluna {
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
+=======
+.content-about {
+    padding: 40px 80px;
+>>>>>>> 5b54deb (Projeto_Portfólio)
 }
 
-.footer-header h3 {
-    font-family: 'Montserrat-Bold';
+.foo-header {
+    background-color: var(--hover-color);
 }
 
-.footer-members h3 {
-  font-family: 'Montserrat-Bold';
-  margin-bottom: 15px;
+h6.projects-title {
+    position: relative;
 }
+
+h6.projects-title::after {
+    content: "";
+    display: block;
+    background: var(--second-color);
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+    margin-top: 0.5rem;
+    margin-bottom: 1.6rem;
+    font-family: 'Montserrat' !important;
+    border-bottom: 1px solid white;
+}
+
+a.foo-link {
+    display: inline-block;
+    font-family: 'Montserrat-Bold' !important;
+    text-decoration: none;
+    margin-top: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+a.foo-link:hover {
+    transform: scale(1.1);
+}
+
+
+
+footer img {
+  width: 28px;
+  transition: all 0.3s ease;
+}
+
+
+footer img:hover {
+    transform: scale(1.3);
+}
+
+.end-footer {
+    background-color: var(--hover-color);
+    margin-top: 80px;
+}
+
 
 /* ------------------ Responsividade ---------------- */
 
+
+@media (max-width: 500px) {
+    header {
+        padding: 20px 50px;
+    }
+}
 @media (max-width: 1000px) {
     div.hamburg {
         display: flex;
@@ -339,10 +413,6 @@ div.coluna {
     a.perfil {
         display: none;
     }
-
-
-    /* --------------- carrossel ---------------- */
-
 
 
     .carousel-caption {
@@ -391,6 +461,15 @@ div.coluna {
         display: none;
     }
 
+    h6.projects-title {
+    margin-top: 40px;
+}
+
+    h6.projects-title::after {
+        margin-top: 20px;
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 767.98px) {
@@ -401,7 +480,6 @@ div.coluna {
 
 
 @media (min-height: 800px) {
-
 
     .hero {
         justify-content: flex-start;
@@ -417,7 +495,7 @@ div.coluna {
     .carousel-caption {
         bottom: 1rem;
         padding: 1rem;
-    
+
     }
 
     .carousel-caption h2 {
@@ -431,10 +509,25 @@ div.coluna {
 
 
 }
- 
+
 @media (min-height: 1000px) {
-.hero p,
-.hero button {
-    margin-top: 5%;
+
+    .hero p,
+    .hero button {
+        margin-top: 5%;
+
+    }
+
+    .content-about {
+        min-height: 70vh;
+        display: flex;
+        padding: 0;
+    }
+
+    .mt-5 {
+        margin-top: 2rem !important;
+    }
+
+
 }
-}
+

@@ -1,4 +1,5 @@
 <?php
+
 defined('CONTROL') or die('Acesso negado!');
 $servername = "localhost";
 $database = "showboard";

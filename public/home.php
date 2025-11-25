@@ -1,4 +1,5 @@
 <?php
+
 defined('CONTROL') or die('Acesso negado!');
 ?>
 
@@ -10,15 +11,16 @@ defined('CONTROL') or die('Acesso negado!');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <link rel="stylesheet" href="fonts/fonts.css">
   <link rel="stylesheet" href="styles/home.css">
-  <title>Showboard | Homepage</title>
+  <title>showboard | Homepage</title>
 </head>
 
 <body>
 
   <header>
-    <h1>Showboard</h1>
+    <img src="img/logo.png" alt="logo showboard">
     <nav class="navbar">
       <div class="hamburg">
         <div class="container-fluid">
@@ -38,8 +40,13 @@ defined('CONTROL') or die('Acesso negado!');
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       <a href="index.php?rota=dashboard" class="projetos" > Meus Projetos</a>
       <a href="index.php?rota=perfil" class="perfil">Perfil</a>
+=======
+      <a class="projetos" href="index.php?rota=dashboard"> Meus Projetos</a>
+      <a class="perfil" href="index.php?rota=perfil">Perfil</a>
+>>>>>>> 5b54deb (Projeto_Portfólio)
       <a class="sair" href="index.php?rota=logout">Sair</a>
     </nav>
   </header>
@@ -102,11 +109,8 @@ defined('CONTROL') or die('Acesso negado!');
       </button>
     </div>
   </section>
-  <footer class="footer-hero">
-    <div class="footer-container">
-      <div class="footer-header">
-        <h3 class="footer-title">Showboard</h3>
 
+<<<<<<< HEAD
       </div>
       <div class="contato">
           <h3 class="contato">
@@ -116,18 +120,27 @@ defined('CONTROL') or die('Acesso negado!');
       </div>
       <div class="coluna"></div>
       <div class="footer-content">
+=======
+>>>>>>> 5b54deb (Projeto_Portfólio)
 
-    
-        <h3>Equipe</h3>
+  <footer class="foo-hero text-center text-lg-start">
 
-        <div class="member">
-          <span>Wesley Carvalho</span>
-          <div class="social">
-            <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+
+    <section class="content-about">
+      <div class="container text-center text-md-start mt-5">
+
+        <div class="row mt-5">
+
+          <div class="showboard-foo col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+            <h6 class="projects-title text-uppercase fw-bold">Objetivos</h6>
+
+            <p>
+              Nossos objetivos para o projeto são de criar uma área acessivel e simples para divulgação de ideias, focando na interatividade e conforto de nossos usuários.
+            </p>
           </div>
-        </div>
 
+<<<<<<< HEAD
 
     
         <div class="member">
@@ -144,11 +157,100 @@ defined('CONTROL') or die('Acesso negado!');
           <div class="social">
             <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+=======
+
+
+          <div class="foo-content col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            <h6 class="projects-title text-uppercase fw-bold">Info</h6>
+
+            <p>
+              <a href="https://getbootstrap.com/" class="foo-link text-white">Bootstrap </a>
+            </p>
+
+            <p>
+              <a href="https://github.com/wesley1271/Projeto_Grafico.git" class="foo-link text-white"> Projeto no Git
+
+              </a>
+            </p>
+
+            <p>
+              <a href="https://developer.mozilla.org/pt-BR/"
+                class="foo-link text-white">MDN Web Docs </a>
+            </p>
+>>>>>>> 5b54deb (Projeto_Portfólio)
           </div>
-        </div>
-      </div>
+
+
+
+          <div class="foo-content col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            <h6 class=" projects-title text-uppercase fw-bold">Links Úteis</h6>
+
+            <p>
+              <a href="http://localhost/Projeto_Grafico/public/index.php?rota=home" class="foo-link text-white"> Início </a>
+            </p>
+            <p>
+              <a href="http://localhost/Projeto_Grafico/public/index.php?rota=perfil" class="foo-link text-white"> Meu Perfil </a>
+            </p>
+            <p>
+              <a href="http://localhost/Projeto_Grafico/public/index.php?rota=dashboard" class="foo-link text-white">Meus Projetos </a>
+            </p>
+
+          </div>
+
+
+
+          <div class="foo-content col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+            <h6 class="projects-title text-uppercase fw-bold">Contato dos integrantes</h6>
+
+            <div class="team-member mb-3">
+              <p class="mb-1 fw-bold">Wesley Carvalho</p>
+              <div class="social-icons d-flex gap-3">
+                <a href="https://github.com/wesley1271" class="integrer-a text-white" target="_blank">
+                  <img src="img/github.png" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/-wesley-carvalho-" target="_blank" class="integrer-a text-white">
+                  <img src="img/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&to=wesley0608romano@gmail.com" class="integrer-a text-white" target="_blank">
+                  <img src="img/gmail.png" alt="Gmail">
+                </a>
+              </div>
+            </div>
+
+        
+
+            <div class="team-member mb-3">
+              <p class="mb-1 fw-bold">Israel dos Santos</p>
+              <div class="social-icons d-flex align-items-center gap-3">
+
+                <a href="https://www.instagram.com/israelsantosoficial/" target="_blank" class="integrer-a text-white">
+                  <img src="img/instagram.png" class="insta-icon" alt="Instagram">
+                </a>
+
+                <a href="https://www.linkedin.com/in/isra-santos-570b6b1a1" target="_blank" class="integrer-a text-white">
+                  <img src="img/linkedin.png" alt="LinkedIn">
+                </a>
+
+                <a href="https://outlook.office.com/mail/deeplink/compose?to=Israel.peniel@outlook.com" target="_blank" class="integrer-a text-white">
+                  <img src="img/outlook.svg" alt="Outlook">
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+    </section>
+
+
+
+    <div class="end-footer text-center p-3">
+      © 2025 Copyright showboard oficial
 
     </div>
+
   </footer>
 
 

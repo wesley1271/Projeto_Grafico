@@ -1,0 +1,614 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  display: block;
+  background-color: var(--second-color) !important;
+  color: var(--text-color);
+}
+
+h1 {
+  font-family: 'Montserrat-ExBold';
+}
+
+h2,
+h3,
+h6,
+a {
+  font-family: 'Montserrat-Bold';
+}
+
+:root {
+  --first-color: #4F46E5;
+  --second-color: #a8bee7;
+  --hover-color: #2e27b3;
+  --h1-font-size: 2rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --p-font-size: 1rem;
+}
+
+
+header {
+  background: var(--first-color);
+  color: white;
+  padding: 10px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 6;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header img {
+  display: inline-block;
+  width: 90px;
+  border: 2px solid white;
+  border-radius: 50px;
+}
+
+nav a {
+  margin-left: 30px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+nav a:hover {
+  color: var(--second-color);
+}
+
+/* ------------------ HAMBURG ------------------ */
+
+div.hamburg {
+  display: none;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.9);
+  border-width: 2px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.offcanvas {
+  background-color: var(--first-color);
+}
+
+.offcanvas a {
+  color: white;
+  margin: 15px 0;
+  display: block;
+  font-weight: bold;
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+/* ------------------ PERFIL ------------------ */
+
+.perfil-container {
+  text-align: center;
+}
+
+.perfil-container h1 {
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-bottom: 2rem;
+  margin-top: 20px;
+}
+
+.perfil-box {
+  background: white;
+  max-width: 400px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  min-height: 50vh
+
+}
+
+.perfil-box strong {
+  margin-right: 6px;
+}
+
+.perfil-box p {
+  display: flex;
+  font-size: var(--p-font-size);
+}
+
+.avatar-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.avatar-wrapper {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid var(--hover-color);
+  overflow: visible;
+  /* IMPORTANTE: permite que o botão fique sobre a borda */
+  position: relative;
+  /* necessário para o botão */
+}
+
+.avatar-button {
+  position: absolute;
+  bottom: -10px;
+  /* um pouco abaixo do canto da borda */
+  right: -10px;
+  /* um pouco à direita do canto da borda */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--first-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: var(--h2-font-size);
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 10;
+}
+
+.avatar-button img {
+  width: 22px;
+}
+
+.avatar-button:hover {
+  transform: scale(1.1);
+}
+
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+
+/* Grid escondido */
+.avatar-grid {
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 120%;
+  left: 300px;
+  transform: translateX(-50%);
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 500;
+}
+
+
+.avatar-grid img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.avatar-grid img:hover {
+  border-color: var(--first-color);
+  transform: scale(1.1);
+}
+
+.avatar-grid.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+
+
+/* Estilização hamburg */
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.884);
+  border-width: 2px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+.navbar-toggler:active {
+  transform: scale(1.05);
+}
+
+.navbar-toggler:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.offcanvas {
+  background-color: var(--first-color);
+  opacity: 80%;
+}
+
+.offcanvas-title {
+  color: white;
+
+
+
+
+}
+
+.offcanvas a {
+  display: block;
+  margin: 10px;
+  font-weight: 600;
+  color: white;
+}
+
+.btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+div.hamburg {
+  display: none;
+}
+
+
+/* cards */
+
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  width: 80%;
+  max-width: 1000px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: var(--p-font-size);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(79, 70, 229, 0.4);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #1a1a1a;
+  display: flex;
+}
+
+.card p {
+  display: flex;
+  margin: 0;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.card a.project-link {
+  text-decoration: none;
+  color: var(--first-color);
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  width: max-content;
+  transition: color 0.3s ease;
+}
+
+
+.card a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--first-color);
+  transition: width 0.3s ease;
+}
+
+.card a.project-link:hover {
+  color: #2e27b3;
+}
+
+.card a.project-link:hover::after {
+  width: 100%;
+}
+
+.card .btns-card {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.card .btn-edit {
+  display: inline-block;
+  background: var(--first-color);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none; /* remove sublinhado */
+}
+
+.card .btn-edit:hover {
+  box-shadow: 0 6px 12px rgba(79, 70, 229, 0.4);
+  background: #2e27b3;
+}
+
+a.btn-edit {
+font-family: 'Montserrat';
+}
+
+
+
+/* ------------------ Footer ---------------- */
+
+
+.foo-hero {
+  background-color: var(--first-color);
+  color: white;
+  padding-top: 40px;
+}
+
+.content-about {
+  padding: 1px 80px;
+  margin-left: 200px;
+}
+
+h6.projects-title {
+  position: relative;
+  font-family: 'Montserrat-Bold';
+  margin-bottom: 1.6rem;
+}
+
+
+h6.projects-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: var(--second-color);
+  border-radius: 2px;
+  margin-top: 6px;
+  transition: width 0.3s ease;
+}
+
+
+a.foo-link {
+  display: inline-block;
+  font-family: 'Montserrat-Bold' !important;
+  margin-top: 0.6rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+a.foo-link:hover {
+  transform: scale(1.08);
+  color: var(--second-color);
+}
+
+
+footer img {
+  width: 28px;
+  transition: all 0.3s ease;
+}
+
+footer img:hover {
+  transform: scale(1.25);
+}
+
+
+.end-footer {
+  background-color: var(--hover-color);
+  padding: 15px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ------------------ RESPONSIVIDADE ---------------- */
+
+
+
+@media (max-width:450px) {
+  .avatar-grid {
+    gap: 5px;
+    padding: 0;
+  }
+
+  .avatar-grid img {
+    width: 40px;
+  
+    height: 40px;
+  }
+
+  .perfil-box {
+    width: 70%;
+  }
+}
+
+@media (max-width: 450px) {
+  .card {
+    padding: 30px 25px;
+    width: 90%;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    padding: 20px 50px;
+  }
+
+  .perfil-box P {
+    font-size: 12px;
+  }
+
+
+}
+
+
+
+@media (max-width: 1000px) {
+  .content-about {
+    padding: 40px 40px;
+    margin-left: 0;
+  }
+
+  h6.projects-title {
+    margin-top: 40px;
+  }
+
+  h6.projects-title::after {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+
+  div.hamburg {
+    display: flex;
+  }
+
+  a.sair,
+  a.home,
+  a.projetos {
+    display: none;
+  }
+
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .foo-hero {
+    text-align: center;
+  }
+
+  .content-about {
+    padding: 20px 20px;
+  }
+
+  h6.projects-title {
+    margin-top: 30px;
+  }
+
+  h6.projects-title::after {
+    width: 100px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  h6.projects-title::after {
+    width: 100%;
+  }
+
+  footer img {
+    width: 25px;
+  }
+
+  .end-footer {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+@media (min-height: 850px) {
+  .end-footer {
+    margin-top: 150px;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .content-about {
+    margin-left: 0 !important;
+    padding: 20px !important;
+    width: 100% !important;
+  }
+
+  .foo-hero {
+    width: 100% !important;
+    display: block;
+  }
+}
+
+
+
+@media (min-height: 1100px) {
+  .end-footer {
+    margin-top: 500px;
+  }
+}
+
+@media (min-height: 1300px) {
+  .end-footer {
+    margin-top: 700px;
+  }
+
+
+}
+
+@media (max-width: 1100px) {
+  .avatar-grid {
+    left: 50%;
+  }
+}

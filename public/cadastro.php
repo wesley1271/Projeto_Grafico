@@ -1,4 +1,5 @@
 <?php
+
 include "conexao.php";
 defined('CONTROL') or die('Acesso negado!');
 $nome = $senha = $email = "";
@@ -58,10 +59,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <main class="cadaster-container">
         <section class="cadaster-box">
             <div class="cadaster-title">
-                <h1>Showboard</h1>
-                <h3>Crie uma conta!</h3>
-            </div>
+                <img src="img/logo.png" alt="logo showboard">
 
+            </div>
+            <h3>Crie uma conta!</h3>
             <p>Uma nova experiência na interatividade profissional!</p>
 
             <?php if (!empty($msgSucess)) : ?>
