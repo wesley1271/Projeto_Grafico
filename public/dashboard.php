@@ -148,7 +148,7 @@ if (!$result) {
 
   <div class="toastDEL" id="toast">Projeto criado com sucesso!</div>
   <div class="toastDEL" id="toastDEL">Projeto excluido com sucesso!</div>
-   <div class="toastDEL" id="toastEdit">Projeto editado com sucesso!</div>
+  <div class="toastDEL" id="toastEdit">Projeto editado com sucesso!</div>
 
 
   <footer class="foo-hero text-center text-lg-start">
@@ -246,6 +246,20 @@ if (!$result) {
                   <img src="img/outlook.svg" alt="Outlook">
                 </a>
 
+              </div>
+              <div class="team-member mb-3">
+                <p class="mb-1 fw-bold">Henry Gonçalves</p>
+                <div class="social-icons d-flex align-items-center gap-3">
+
+                  <a href="https://www.instagram.com/zote_121g/" target="_blank" class="integrer-a text-white">
+                    <img src="img/instagram.png" class="insta-icon" alt="Instagram">
+                  </a>
+
+                  <a href="https://www.linkedin.com/in/henry-gon%C3%A7alves-furtuna-06b889188/" target="_blank" class="integrer-a text-white">
+                    <img src="img/linkedin.png" alt="LinkedIn">
+                  </a>
+
+                </div>
               </div>
             </div>
           </div>

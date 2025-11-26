@@ -69,7 +69,7 @@ defined('CONTROL') or die('Acesso negado!');
       <div class="carousel-inner">
 
 
-        <div class="carousel-item active" data-bs-interval="1000">
+        <div class="carousel-item active" data-bs-interval="5000">
           <img src="img/portfolio.jpg" class="d-block w-100" alt="codigo e ferramentas">
           <div class="carousel-caption d-none d-md-block">
             <h2>Linguagens e ferramentas</h2>
@@ -78,7 +78,7 @@ defined('CONTROL') or die('Acesso negado!');
         </div>
 
 
-        <div class="carousel-item" data-bs-interval="1000">
+        <div class="carousel-item" data-bs-interval="5000">
           <img src="img/interacao.png" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h2>interação com o usuário</h2>
@@ -184,7 +184,6 @@ defined('CONTROL') or die('Acesso negado!');
               </div>
             </div>
 
-        
 
             <div class="team-member mb-3">
               <p class="mb-1 fw-bold">Israel dos Santos</p>
@@ -204,8 +203,26 @@ defined('CONTROL') or die('Acesso negado!');
 
               </div>
             </div>
+     <div class="team-member mb-3">
+            <p class="mb-1 fw-bold">Henry Gonçalves</p>
+            <div class="social-icons d-flex align-items-center gap-3">
+
+              <a href="https://www.instagram.com/zote_121g/" target="_blank" class="integrer-a text-white">
+                <img src="img/instagram.png" class="insta-icon" alt="Instagram">
+              </a>
+
+              <a href="https://www.linkedin.com/in/henry-gon%C3%A7alves-furtuna-06b889188/" target="_blank" class="integrer-a text-white">
+                <img src="img/linkedin.png" alt="LinkedIn">
+              </a>
+
+            </div>
+          </div>
 
           </div>
+
+     
+
+        </div>
     </section>
 
 

@@ -61,7 +61,7 @@ img {
   border-radius: 12px;
   padding: 40px;
   max-width: 420px;
-  max-height: 700px;
+  min-height: 650px;
   width: 100%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.466);
   text-align: center;
