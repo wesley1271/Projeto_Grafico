@@ -165,6 +165,7 @@ defined('CONTROL') or die('Acesso negado!');
 
 
 
+     
           <div class="foo-content col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
             <h6 class="projects-title text-uppercase fw-bold">Contato dos integrantes</h6>
@@ -200,27 +201,27 @@ defined('CONTROL') or die('Acesso negado!');
                 <a href="https://outlook.office.com/mail/deeplink/compose?to=Israel.peniel@outlook.com" target="_blank" class="integrer-a text-white">
                   <img src="img/outlook.svg" alt="Outlook">
                 </a>
+              </div>
+            </div>
+            <div class="team-member mb-3">
+              <p class="mb-1 fw-bold">Henry Gonçalves</p>
+              <div class="social-icons d-flex align-items-center gap-3">
+                <a href="https://github.com/henry121g" class="integrer-a text-white" target="_blank">
+                  <img src="img/github.png" alt="GitHub">
+                </a>
+
+                <a href="https://www.instagram.com/zote_121g/" target="_blank" class="integrer-a text-white">
+                  <img src="img/instagram.png" class="insta-icon" alt="Instagram">
+                </a>
+
+                <a href="https://www.linkedin.com/in/henry-gon%C3%A7alves-furtuna-06b889188/" target="_blank" class="integrer-a text-white">
+                  <img src="img/linkedin.png" alt="LinkedIn">
+                </a>
 
               </div>
             </div>
-     <div class="team-member mb-3">
-            <p class="mb-1 fw-bold">Henry Gonçalves</p>
-            <div class="social-icons d-flex align-items-center gap-3">
-
-              <a href="https://www.instagram.com/zote_121g/" target="_blank" class="integrer-a text-white">
-                <img src="img/instagram.png" class="insta-icon" alt="Instagram">
-              </a>
-
-              <a href="https://www.linkedin.com/in/henry-gon%C3%A7alves-furtuna-06b889188/" target="_blank" class="integrer-a text-white">
-                <img src="img/linkedin.png" alt="LinkedIn">
-              </a>
-
-            </div>
-          </div>
 
           </div>
-
-     
 
         </div>
     </section>

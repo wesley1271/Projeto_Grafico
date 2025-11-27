@@ -406,10 +406,9 @@ font-family: 'Montserrat';
 }
 
 .content-about {
-  padding: 1px 80px;
-  margin-left: 200px;
+    padding: 20px 60px;
+    margin-left: 160px;
 }
-
 h6.projects-title {
   position: relative;
   font-family: 'Montserrat-Bold';
@@ -536,21 +535,31 @@ footer img:hover {
 
 
 
+
 @media (max-width: 768px) {
-  .foo-hero {
-    text-align: center;
+
+
+  footer .row > div {
+    display: block !important;
+    text-align: center !important;
   }
 
-  .content-about {
-    padding: 20px 20px;
+  .team-member {
+    text-align: center !important;
   }
 
-  h6.projects-title {
-    margin-top: 30px;
+  .team-member p {
+    text-align: center !important;
   }
 
-  h6.projects-title::after {
-    width: 100px;
+  .team-member .social-icons {
+    justify-content: center !important;
+  }
+
+  .team-member .social-icons img {
+    display: inline-block !important;
+    margin: 0 auto !important;
+    margin-bottom: 20px !important;
   }
 }
 

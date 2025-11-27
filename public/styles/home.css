@@ -442,6 +442,35 @@ footer img:hover {
 
 }
 
+
+
+@media (max-width: 768px) {
+
+
+  footer .row > div {
+    display: block !important;
+    text-align: center !important;
+  }
+
+  .team-member {
+    text-align: center !important;
+  }
+
+  .team-member p {
+    text-align: center !important;
+  }
+
+  .team-member .social-icons {
+    justify-content: center !important;
+  }
+
+  .team-member .social-icons img {
+    display: inline-block !important;
+    margin: 0 auto !important;
+    margin-bottom: 20px !important;
+  }
+}
+
 @media (max-width: 767.98px) {
     .carousel-caption.d-none.d-md-block {
         display: block !important;
